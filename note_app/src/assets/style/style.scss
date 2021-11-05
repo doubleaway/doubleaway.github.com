@@ -1,0 +1,529 @@
+@import "reset","mixin","data";
+
+//color
+.back_light_gray{
+  background: $color_light_gray;
+}
+
+//button
+.btn{
+  &_edit{
+    border:1px solid #eee;
+    span{
+      font-size: 1.25rem;
+    }
+  }
+
+}
+
+//nav
+.nav_box{
+  @include size(100%,200px);
+  line-height: 200px;
+  background: #00C854;
+  h1{
+    font-size: 5rem;
+    text-align: center;
+  }
+}
+
+
+//edit_bar
+.edit_bar_box{
+  position: relative;
+  height: 100px;
+  .edit_bar{
+    position: absolute;
+    right: 13%;
+    margin:{
+      left: 0%;
+      top:40px;
+    }
+    display: flex;
+  span{
+    line-height: 40px;
+    margin-left: 5px;
+  }
+    li{
+      margin-right: 15px;
+    }
+  }
+}
+
+
+
+//homebox
+.home_content{
+  display: flex;
+  &> article{
+    &:first-child{
+      width: 15%;
+    }
+    &:last-child{
+      width: 85%;
+    }
+  }
+}
+
+
+//사각형 모양 리스트
+.list_box_square{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+//메모장 스타일
+.memo_box{
+  @include size(325px,auto);
+  box-sizing: border-box;
+  padding:1.5% 20px;
+  padding-bottom: 60px;
+  margin:{
+    right:20px;
+    top:15px;
+  }
+  border-radius: 5px;
+  border:1px solid #eee;
+  .content_txt{
+    width:100%;
+  }
+  .title_box{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
