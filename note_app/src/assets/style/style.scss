@@ -4,13 +4,27 @@
 .back_light_gray{
   background: $color_light_gray;
 }
-
+.color_main{
+  color:$main_color!important;
+}
+.color_light_gray{
+  color:$color_light_gray!important;
+}
+.color_gray{
+  color:$color_gray!important;
+}
+input:focus{
+  outline: 1px solid $main_color;
+}
 //button
 .btn{
   &_edit{
     border:1px solid #eee;
+    padding-top:5px;
+    box-sizing: border-box;
+
     span{
-      font-size: 1.25rem;
+      font-size: 0.85rem;
     }
   }
 
@@ -20,7 +34,7 @@
 .nav_box{
   @include size(100%,200px);
   line-height: 200px;
-  background: #00C854;
+
   h1{
     font-size: 5rem;
     text-align: center;
@@ -32,12 +46,14 @@
 .edit_bar_box{
   position: relative;
   height: 100px;
+  padding-top: 40px;
+  box-sizing: border-box;
   .edit_bar{
     position: absolute;
-    right: 13%;
+    left: 15%;
     margin:{
-      left: 0%;
-      top:40px;
+      left: 0;
+      top:0;
     }
     display: flex;
   span{
@@ -48,21 +64,31 @@
       margin-right: 15px;
     }
   }
+  .search_bar{
+    position: absolute;
+    right: 15%;
+    input{
+      @include size(280px,50px);
+      border: 1px solid $color_light_gray;
+      border-radius: 3px;
+      padding:5px;
+      box-sizing: border-box;
+    }
+  }
 }
 
 
 
 //homebox
+
 .home_content{
+
   display: flex;
+  justify-content: center;
   &> article{
-    &:first-child{
-      width: 15%;
+      width: 70%;
     }
-    &:last-child{
-      width: 85%;
-    }
-  }
+
 }
 
 
@@ -75,23 +101,44 @@
 
 //메모장 스타일
 .memo_box{
-  @include size(325px,auto);
+  @include size(316px,auto);
   box-sizing: border-box;
+  background: rgba(255,255,255,0.6);
   padding:1.5% 20px;
-  padding-bottom: 60px;
+  padding-bottom:30px;
   margin:{
-    right:20px;
+    right:17px;
     top:15px;
   }
   border-radius: 5px;
   border:1px solid #eee;
+  input[type='checkbox']{
+    border: 1px solid $color_gray;
+   box-shadow: 2px 2px 2px $main_color;
+  &:checked{
+    //background: r;
+  }
+  }
+
+
   .content_txt{
     width:100%;
   }
   .title_box{
     display: flex;
     justify-content: space-between;
+    p{
+      color:$color_light_gray;
+      cursor: pointer;
+    }
   }
+  &>div{
+    &:last-child{
+      margin-top:30px;
+      text-align: right;
+    }
+  }
+
 }
 
 
