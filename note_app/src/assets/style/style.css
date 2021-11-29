@@ -129,6 +129,12 @@ input:focus {
   border: 1px solid #ADB5BD;
   box-shadow: 2px 2px 2px #00C854;
 }
+.memo_box .contents_inputs {
+  display: inline-block;
+  width: 100%;
+  outline: none;
+  border: none;
+}
 .memo_box .content_txt {
   width: 100%;
 }
@@ -143,6 +149,28 @@ input:focus {
 .memo_box > div:last-child {
   margin-top: 30px;
   text-align: right;
+}
+
+.inputs_box {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
+.inputs_box .memo_box {
+  width: 35%;
+  height: 450px;
+  margin-top: 225px;
+  background: rgba(255, 255, 255, 0.9);
+}
+.inputs_box .memo_box textarea {
+  display: inline-block;
+  height: 300px;
+  word-break: break-word;
 }
 
 /*# sourceMappingURL=style.css.map */

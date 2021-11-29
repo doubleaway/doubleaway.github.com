@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import MemoContent from "./component/features/MemoContent";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MemoContent />
   </React.StrictMode>,
   document.getElementById('root')
 );

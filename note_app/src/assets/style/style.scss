@@ -119,6 +119,12 @@ input:focus{
     //background: r;
   }
   }
+  .contents_inputs{
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    border: none;
+  }
 
 
   .content_txt{
@@ -141,7 +147,24 @@ input:focus{
 
 }
 
-
+.inputs_box{
+  position: fixed;
+  @include size(100%,100%);
+  background: rgba(0,0,0,0.5);
+  left:0;top:0;
+  display: flex;
+  justify-content: center;
+  .memo_box{
+    @include size(35%,450px);
+    margin-top:225px;
+    background: rgba(255,255,255,0.9);
+    textarea{
+      display: inline-block;
+      height:300px;
+      word-break: break-word;
+    }
+  }
+}
 
 
 
