@@ -1,6 +1,6 @@
 import React from "react";
 const WritePage=()=>{
-    return <div>WirtePage</div>
+    return <div>WirtePage</div>;
 }
 
-export default WritePage
+export default WritePage;
