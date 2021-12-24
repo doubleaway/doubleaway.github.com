@@ -9,11 +9,11 @@ import WritePage from "./pages/WritePage";
 function App() {
   return (
             <Routes>
-                <Route element={<PostList/>} path="/" exact={true}/>
-             <Route element={<LoginPage/>} path="/login"/>
-             <Route element={<PostPage/>} path="/register"/>
-             <Route element={<RegisterPage/>} path="/write"/>
-             <Route element={<WritePage/>} path="/@:username/:postid"/>
+                <Route element={<PostList/>} path={'/'} exact={true}/>
+                 <Route element={<LoginPage/>} path="/login"/>
+                <Route element={<PostPage/>} path="/register"/>
+                <Route element={<RegisterPage/>} path="/write"/>
+                <Route element={<WritePage/>} path="/@:username/:postid"/>
             </Routes>
   );
 };
