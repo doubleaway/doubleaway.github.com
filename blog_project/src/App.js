@@ -11,8 +11,8 @@ function App() {
             <Routes>
                 <Route element={<PostList/>} path={'/'} exact={true}/>
                  <Route element={<LoginPage/>} path="/login"/>
-                <Route element={<PostPage/>} path="/register"/>
-                <Route element={<RegisterPage/>} path="/write"/>
+                <Route element={<PostPage/>} path="/write"/>
+                <Route element={<RegisterPage/>} path="/register"/>
                 <Route element={<WritePage/>} path="/@:username/:postid"/>
             </Routes>
   );

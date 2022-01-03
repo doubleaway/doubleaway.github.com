@@ -51,7 +51,7 @@ const textMap={
     login:'로그인',
     register:'회원가입'
 };
-const AuthForm=({type})=>{
+const AuthForm=({type,form,onChange,onSubmit})=>{
     const text=textMap[type];
     return(
         <AuthFormBlock>
