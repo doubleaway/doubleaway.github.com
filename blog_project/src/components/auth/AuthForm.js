@@ -58,21 +58,30 @@ const AuthForm=({type,form,onChange,onSubmit})=>{
             <h3>
                 {text}
             </h3>
-            <form>
-                <StyledInput autoComplate="username" name="username" placeholder="아이디"/>
+            <form onSubmit={onSubmit}>
+                <StyledInput autoComplate="username"
+                             name="username"
+                             placeholder="아이디"
+                             onChange={onChange}
+                             value={form.username}
+                />
                 <StyledInput autoComplate="new-password"
                              name="password"
                              placeholder="비밀번호"
                              type="password"
+                             onChange={onChange}
+                             value={form.password}
                 />
                 {type==='register'&&(
                     <StyledInput autoComplate="new-password"
                                  name="passwordConfirm"
                                  placeholder="비밀번호 확인"
                                  type="password"
+                                 onChange={onChange}
+                                 value={form.passwordConfirm}
                     />
                 )}
-                <ButtonWithMarginTop cyan fullWidth >{text}</ButtonWithMarginTop>
+                <ButtonWithMarginTop cyan fullWidth style={{marginTop:'1rem'}}>{text}</ButtonWithMarginTop>
             </form>
             <Footer>
                 {
