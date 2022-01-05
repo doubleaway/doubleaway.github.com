@@ -48,7 +48,9 @@ input:focus{
   height: 100px;
   padding-top: 40px;
   box-sizing: border-box;
+
   .edit_bar{
+
     position: absolute;
     left: 15%;
     margin:{
@@ -67,10 +69,11 @@ input:focus{
   .search_bar{
     position: absolute;
     right: 15%;
+    border: 1px solid $color_light_gray;
+    border-radius: 5px;
     input{
       @include size(280px,50px);
-      border: 1px solid $color_light_gray;
-      border-radius: 3px;
+      border:none;
       padding:5px;
       box-sizing: border-box;
     }
@@ -101,17 +104,23 @@ input:focus{
 
 //메모장 스타일
 .memo_box{
+  cursor: pointer;
   @include size(316px,auto);
   box-sizing: border-box;
   background: rgba(255,255,255,0.6);
-  padding:1.5% 20px;
-  padding-bottom:30px;
+  padding:0 1.5%;
+  padding:{
+    bottom:30px;
+    top: 15px;
+  }
   margin:{
     right:17px;
     top:15px;
   }
   border-radius: 5px;
   border:1px solid #eee;
+
+  border-top: 15px solid $main_color;
   input[type='checkbox']{
     border: 1px solid $color_gray;
    box-shadow: 2px 2px 2px $main_color;
@@ -133,6 +142,7 @@ input:focus{
   .title_box{
     display: flex;
     justify-content: space-between;
+    height: 30px;
     p{
       color:$color_light_gray;
       cursor: pointer;

@@ -90,12 +90,13 @@ input:focus {
 .edit_bar_box .search_bar {
   position: absolute;
   right: 15%;
+  border: 1px solid #E1E4E7;
+  border-radius: 5px;
 }
 .edit_bar_box .search_bar input {
   width: 280px;
   height: 50px;
-  border: 1px solid #E1E4E7;
-  border-radius: 3px;
+  border: none;
   padding: 5px;
   box-sizing: border-box;
 }
@@ -114,16 +115,19 @@ input:focus {
 }
 
 .memo_box {
+  cursor: pointer;
   width: 316px;
   height: auto;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.6);
-  padding: 1.5% 20px;
+  padding: 0 1.5%;
   padding-bottom: 30px;
+  padding-top: 15px;
   margin-right: 17px;
   margin-top: 15px;
   border-radius: 5px;
   border: 1px solid #eee;
+  border-top: 15px solid #00C854;
 }
 .memo_box input[type=checkbox] {
   border: 1px solid #ADB5BD;
@@ -141,6 +145,7 @@ input:focus {
 .memo_box .title_box {
   display: flex;
   justify-content: space-between;
+  height: 30px;
 }
 .memo_box .title_box p {
   color: #E1E4E7;

@@ -7,7 +7,7 @@ import MemoContent from "./component/features/MemoContent";
 
 ReactDOM.render(
   <React.StrictMode>
-    <MemoContent />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
