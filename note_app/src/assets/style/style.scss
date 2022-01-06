@@ -104,23 +104,43 @@ input:focus{
 
 //메모장 스타일
 .memo_box{
+  .label_box{
+    background: $main_color;
+    overflow: hidden;
+    height: 30px;
+    line-height: 1.5;
+    text-indent: 15px;
+    color:white;
+    font-size: 1.2rem;
+    svg{
+      padding-right: 5px;
+    }
+  }
+  .memo_content_box{
+    padding:15px 3.5%;
+    padding:{
+      bottom:30px;
+      top: 15px;
+    }
+    &>div{
+      &:last-child{
+        margin-top:30px;
+        text-align: right;
+      }
+    }
+  }
   cursor: pointer;
   @include size(316px,auto);
   box-sizing: border-box;
   background: rgba(255,255,255,0.6);
-  padding:0 1.5%;
-  padding:{
-    bottom:30px;
-    top: 15px;
-  }
+  overflow: hidden;
+
   margin:{
     right:17px;
     top:15px;
   }
-  border-radius: 5px;
+  border-radius: 10px;
   border:1px solid #eee;
-
-  border-top: 15px solid $main_color;
   input[type='checkbox']{
     border: 1px solid $color_gray;
    box-shadow: 2px 2px 2px $main_color;
@@ -148,12 +168,7 @@ input:focus{
       cursor: pointer;
     }
   }
-  &>div{
-    &:last-child{
-      margin-top:30px;
-      text-align: right;
-    }
-  }
+
 
 }
 

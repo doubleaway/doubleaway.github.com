@@ -25,7 +25,8 @@ button {
 }
 
 svg {
-  vertical-align: top;
+  vertical-align: middle;
+  margin-top: -4px;
 }
 
 .back_light_gray {
@@ -120,14 +121,32 @@ input:focus {
   height: auto;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.6);
-  padding: 0 1.5%;
-  padding-bottom: 30px;
-  padding-top: 15px;
+  overflow: hidden;
   margin-right: 17px;
   margin-top: 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #eee;
-  border-top: 15px solid #00C854;
+}
+.memo_box .label_box {
+  background: #00C854;
+  overflow: hidden;
+  height: 30px;
+  line-height: 1.5;
+  text-indent: 15px;
+  color: white;
+  font-size: 1.2rem;
+}
+.memo_box .label_box svg {
+  padding-right: 5px;
+}
+.memo_box .memo_content_box {
+  padding: 15px 3.5%;
+  padding-bottom: 30px;
+  padding-top: 15px;
+}
+.memo_box .memo_content_box > div:last-child {
+  margin-top: 30px;
+  text-align: right;
 }
 .memo_box input[type=checkbox] {
   border: 1px solid #ADB5BD;
@@ -150,10 +169,6 @@ input:focus {
 .memo_box .title_box p {
   color: #E1E4E7;
   cursor: pointer;
-}
-.memo_box > div:last-child {
-  margin-top: 30px;
-  text-align: right;
 }
 
 .inputs_box {
