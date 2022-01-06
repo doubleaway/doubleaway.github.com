@@ -30,6 +30,25 @@ input:focus{
 
 }
 
+//알림창
+.notification_box{
+  @include size(100%,100%);
+  position: absolute;
+  top:0;
+  left:0;
+  background: rgba(0,0,0,0.8);
+  aside{
+    @include size(30%,400px);
+    margin:{
+      top:200px;
+      left: 35%;
+    }
+    border-radius: 10px;
+    background: #fff;
+  }
+}
+
+
 //nav
 .nav_box{
   @include size(100%,200px);
@@ -162,7 +181,10 @@ input:focus{
   .title_box{
     display: flex;
     justify-content: space-between;
-    height: 30px;
+    height: 50px;
+    svg{
+      margin-top: 13px;
+    }
     p{
       color:$color_light_gray;
       cursor: pointer;
@@ -179,14 +201,18 @@ input:focus{
   left:0;top:0;
   display: flex;
   justify-content: center;
+
   .memo_box{
     @include size(35%,450px);
+    padding:0 10px;
+    box-sizing: border-box;
     margin-top:225px;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,1);
     textarea{
       display: inline-block;
       height:300px;
       word-break: break-word;
+      background: rgba(255,255,255,0.7);
     }
   }
 }

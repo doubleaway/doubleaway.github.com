@@ -19,7 +19,7 @@ return(
             {/*<MenuBar/>*/}
             <List/>
         </div>
-        <Notification/>
+        {/*<Notification/>*/}
     </section>
 
 )
