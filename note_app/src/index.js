@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MemoContent from "./component/features/MemoContent";
+import Notification from "./component/Notification";
 
 ReactDOM.render(
   <React.StrictMode>
-    <MemoContent />
+    <Notification />
   </React.StrictMode>,
   document.getElementById('root')
 );

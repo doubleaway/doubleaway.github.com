@@ -37,6 +37,7 @@ input:focus{
   top:0;
   left:0;
   background: rgba(0,0,0,0.8);
+
   aside{
     @include size(30%,400px);
     margin:{
@@ -44,7 +45,62 @@ input:focus{
       left: 35%;
     }
     border-radius: 10px;
+    overflow: hidden;
     background: #fff;
+    position: relative;
+    &>button{
+      @include size(50px,50px);
+      padding: 0 0;
+      background: none;
+      border:none;
+      position: absolute;
+      right: 10px;
+      top:10px;
+    }
+    .notification_icon{
+      height: 245px;
+      background: firebrick;
+      text-align: center;
+      color:white;
+      svg{
+        @include size(100%,50%);
+        margin-top: 50px;
+        color: white;
+      }
+      h1{
+        margin-top: 15px;
+        font:{
+          size: 1.5rem;
+        }
+      }
+    }
+    .notification_content{
+      height: 100px;
+      text-align: center;
+      font:{
+        weight: 600;
+        size: 1.35rem;
+      }
+      p{
+        color:#495057;
+        font-size: 1.2rem;
+      }
+     padding-top:15px;
+      box-sizing: border-box;
+    }
+    .notification_btn{
+      display: flex;
+
+      button{
+        font-size: 1.25rem;
+        width: 50%;
+        border:none;
+        border-radius: 0;
+        &:last-child{
+          border-left: 1px solid $color_gray;
+        }
+      }
+    }
   }
 }
 
