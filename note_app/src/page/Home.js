@@ -7,6 +7,9 @@ import EditBar from "../component/EditBar";
 import Notification from "../component/Notification";
 const Home=()=>{
 
+const onClose=()=>{
+
+}
 return(
     <section className="home_box">
         <div className="nav_box">
@@ -19,7 +22,7 @@ return(
             {/*<MenuBar/>*/}
             <List/>
         </div>
-        {/*<Notification/>*/}
+        <Notification/>
     </section>
 
 )
