@@ -119,11 +119,13 @@ input:focus {
 }
 .notification_box aside .notification_btn button {
   font-size: 1.25rem;
+  font-weight: bold;
   width: 50%;
   border: none;
   border-radius: 0;
 }
 .notification_box aside .notification_btn button:last-child {
+  color: firebrick;
   border-left: 1px solid #ADB5BD;
 }
 

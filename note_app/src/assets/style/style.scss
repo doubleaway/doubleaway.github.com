@@ -92,11 +92,17 @@ input:focus{
       display: flex;
 
       button{
-        font-size: 1.25rem;
+
+        font:{
+          size: 1.25rem;
+          weight: bold;
+        }
         width: 50%;
         border:none;
         border-radius: 0;
+
         &:last-child{
+          color:firebrick;
           border-left: 1px solid $color_gray;
         }
       }
