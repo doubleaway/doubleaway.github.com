@@ -5,7 +5,7 @@ import moment from 'moment';
 import 'moment/locale/ko';
 
 function MemoContents(){
-    const nowTime = moment().format('YYYY-MM-DD HH:mm:ss');
+    const nowTime = moment().format('YYYY.MM.DD');
     console.log(nowTime);
     return (
         <div className="inputs_box">
@@ -24,7 +24,7 @@ function MemoContents(){
                            name="memo_contents"
                     />
                 </div>
-                <div className="color_gray">2020.02.01</div>
+                <div className="color_gray">{nowTime}</div>
             </div>
         </div>
     )

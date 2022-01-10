@@ -1,287 +1,289 @@
-@import "reset","mixin","data";
+  @import "reset","mixin","data";
 
-//color
-.back_light_gray{
-  background: $color_light_gray;
-}
-.color_main{
-  color:$main_color!important;
-}
-.color_light_gray{
-  color:$color_light_gray!important;
-}
-.color_gray{
-  color:$color_gray!important;
-}
-input:focus{
-  outline: 1px solid $main_color;
-}
-//button
-.btn{
-  &_edit{
-    border:1px solid #eee;
-    padding-top:5px;
-    box-sizing: border-box;
+  //color
+  .back_light_gray{
+    background: $color_light_gray;
+  }
+  .color_main{
+    color:$main_color!important;
+  }
+  .color_light_gray{
+    color:$color_light_gray!important;
+  }
+  .color_gray{
+    color:$color_gray!important;
+  }
+  input:focus{
+    outline: 1px solid $main_color;
+  }
+  //button
+  .btn{
+    &_edit{
+      border:1px solid #eee;
+      padding-top:5px;
+      box-sizing: border-box;
 
-    span{
-      font-size: 0.85rem;
+      span{
+        font-size: 0.85rem;
+      }
+    }
+
+  }
+
+  //알림창
+  .notification_box{
+    @include size(100%,100%);
+    position: absolute;
+    top:0;
+    left:0;
+    background: rgba(0,0,0,0.8);
+
+    aside{
+      @include size(30%,400px);
+      margin:{
+        top:200px;
+        left: 35%;
+      }
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+      &>button{
+        @include size(50px,50px);
+        padding: 0 0;
+        background: none;
+        border:none;
+        position: absolute;
+        right: 10px;
+        top:10px;
+      }
+      .notification_icon{
+        height: 245px;
+        background: firebrick;
+        text-align: center;
+        color:white;
+        svg{
+          @include size(100%,50%);
+          margin-top: 50px;
+          color: white;
+        }
+        h1{
+          margin-top: 15px;
+          font:{
+            size: 1.5rem;
+          }
+        }
+      }
+      .notification_content{
+        height: 100px;
+        text-align: center;
+        font:{
+          weight: 600;
+          size: 1.35rem;
+        }
+        p{
+          color:#495057;
+          font-size: 1.2rem;
+        }
+       padding-top:15px;
+        box-sizing: border-box;
+      }
+      .notification_btn{
+        display: flex;
+
+        button{
+
+          font:{
+            size: 1.25rem;
+            weight: bold;
+          }
+          width: 50%;
+          border:none;
+          border-radius: 0;
+
+          &:last-child{
+            color:firebrick;
+            border-left: 1px solid $color_gray;
+          }
+        }
+      }
     }
   }
 
-}
 
-//알림창
-.notification_box{
-  @include size(100%,100%);
-  position: absolute;
-  top:0;
-  left:0;
-  background: rgba(0,0,0,0.8);
+  //nav
+  .nav_box{
+    @include size(100%,200px);
+    line-height: 200px;
 
-  aside{
-    @include size(30%,400px);
+    h1{
+      font-size: 5rem;
+      text-align: center;
+    }
+  }
+
+
+  //edit_bar
+  .edit_bar_box{
+    display: flex;
+    height: 100px;
+    padding-top: 40px;
+    box-sizing: border-box;
+  justify-content: space-between;
+    margin-left: 15%;
+    width:69%;
+    .edit_bar{
+      margin:{
+        left: 0;
+        top:0;
+      }
+      display: flex;
+    span{
+      line-height: 40px;
+      margin-left: 5px;
+    }
+      li{
+        margin-right: 5px;
+      }
+    }
+    .search_bar{
+      height: 48px;
+      border: 1px solid $color_light_gray;
+      border-radius: 5px;
+      svg{
+        margin-top:0;
+      }
+      input{
+        @include size(280px,100%);
+        background: none;
+        border:none;
+        padding:5px;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+
+
+  //homebox
+
+  .home_content{
+
+    display: flex;
+    justify-content: center;
+    &> article{
+        width: 70%;
+      }
+
+  }
+
+
+  //사각형 모양 리스트
+  .list_box_square{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+
+  //메모장 스타일
+  .memo_box{
+    .label_box{
+      background: $main_color;
+      overflow: hidden;
+      height: 30px;
+      line-height: 1.5;
+      text-indent: 15px;
+      color:white;
+      font-size: 1.2rem;
+      svg{
+        padding-right: 5px;
+      }
+    }
+    .memo_content_box{
+      padding:15px 3.5%;
+      padding:{
+        bottom:30px;
+        top: 15px;
+      }
+      &>div{
+        &:last-child{
+          margin-top:30px;
+          text-align: right;
+        }
+      }
+    }
+    cursor: pointer;
+    @include size(316px,auto);
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.6);
+    overflow: hidden;
+
     margin:{
-      top:200px;
-      left: 35%;
+      right:17px;
+      top:15px;
     }
     border-radius: 10px;
-    overflow: hidden;
-    background: #fff;
-    position: relative;
-    &>button{
-      @include size(50px,50px);
-      padding: 0 0;
-      background: none;
-      border:none;
-      position: absolute;
-      right: 10px;
-      top:10px;
+    border:1px solid #eee;
+    input[type='checkbox']{
+      border: 1px solid $color_gray;
+     box-shadow: 2px 2px 2px $main_color;
+    &:checked{
+      //background: r;
     }
-    .notification_icon{
-      height: 245px;
-      background: firebrick;
-      text-align: center;
-      color:white;
+    }
+    .contents_inputs{
+      display: inline-block;
+      width: 100%;
+      outline: none;
+      border: none;
+    }
+
+
+    .content_txt{
+      width:100%;
+    }
+    .title_box{
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
       svg{
-        @include size(100%,50%);
-        margin-top: 50px;
-        color: white;
-      }
-      h1{
-        margin-top: 15px;
-        font:{
-          size: 1.5rem;
-        }
-      }
-    }
-    .notification_content{
-      height: 100px;
-      text-align: center;
-      font:{
-        weight: 600;
-        size: 1.35rem;
+        margin-top: 0px;
       }
       p{
-        color:#495057;
-        font-size: 1.2rem;
-      }
-     padding-top:15px;
-      box-sizing: border-box;
-    }
-    .notification_btn{
-      display: flex;
-
-      button{
-
-        font:{
-          size: 1.25rem;
-          weight: bold;
-        }
-        width: 50%;
-        border:none;
-        border-radius: 0;
-
-        &:last-child{
-          color:firebrick;
-          border-left: 1px solid $color_gray;
-        }
+        color:$color_light_gray;
+        cursor: pointer;
       }
     }
+
+
   }
-}
 
-
-//nav
-.nav_box{
-  @include size(100%,200px);
-  line-height: 200px;
-
-  h1{
-    font-size: 5rem;
-    text-align: center;
-  }
-}
-
-
-//edit_bar
-.edit_bar_box{
-  position: relative;
-  height: 100px;
-  padding-top: 40px;
-  box-sizing: border-box;
-
-  .edit_bar{
-
-    position: absolute;
-    left: 15%;
-    margin:{
-      left: 0;
-      top:0;
-    }
+  .inputs_box{
+    position: fixed;
+    @include size(100%,100%);
+    background: rgba(0,0,0,0.5);
+    left:0;top:0;
     display: flex;
-  span{
-    line-height: 40px;
-    margin-left: 5px;
-  }
-    li{
-      margin-right: 15px;
+    justify-content: center;
+    .title_box{
+      svg{
+        margin-top: 15px;
+      }
     }
-  }
-  .search_bar{
-    position: absolute;
-    right: 15%;
-    border: 1px solid $color_light_gray;
-    border-radius: 5px;
-    input{
-      @include size(280px,50px);
-      border:none;
-      padding:5px;
+    .memo_box{
+      @include size(35%,450px);
+      padding:0 10px;
       box-sizing: border-box;
-    }
-  }
-}
-
-
-
-//homebox
-
-.home_content{
-
-  display: flex;
-  justify-content: center;
-  &> article{
-      width: 70%;
-    }
-
-}
-
-
-//사각형 모양 리스트
-.list_box_square{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-
-//메모장 스타일
-.memo_box{
-  .label_box{
-    background: $main_color;
-    overflow: hidden;
-    height: 30px;
-    line-height: 1.5;
-    text-indent: 15px;
-    color:white;
-    font-size: 1.2rem;
-    svg{
-      padding-right: 5px;
-    }
-  }
-  .memo_content_box{
-    padding:15px 3.5%;
-    padding:{
-      bottom:30px;
-      top: 15px;
-    }
-    &>div{
-      &:last-child{
-        margin-top:30px;
-        text-align: right;
+      margin-top:225px;
+      background: rgba(255,255,255,1);
+      textarea{
+        display: inline-block;
+        height:300px;
+        word-break: break-word;
+        background: rgba(255,255,255,0.7);
       }
     }
   }
-  cursor: pointer;
-  @include size(316px,auto);
-  box-sizing: border-box;
-  background: rgba(255,255,255,0.6);
-  overflow: hidden;
-
-  margin:{
-    right:17px;
-    top:15px;
-  }
-  border-radius: 10px;
-  border:1px solid #eee;
-  input[type='checkbox']{
-    border: 1px solid $color_gray;
-   box-shadow: 2px 2px 2px $main_color;
-  &:checked{
-    //background: r;
-  }
-  }
-  .contents_inputs{
-    display: inline-block;
-    width: 100%;
-    outline: none;
-    border: none;
-  }
-
-
-  .content_txt{
-    width:100%;
-  }
-  .title_box{
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
-    svg{
-      margin-top: 0px;
-    }
-    p{
-      color:$color_light_gray;
-      cursor: pointer;
-    }
-  }
-
-
-}
-
-.inputs_box{
-  position: fixed;
-  @include size(100%,100%);
-  background: rgba(0,0,0,0.5);
-  left:0;top:0;
-  display: flex;
-  justify-content: center;
-  .title_box{
-    svg{
-      margin-top: 15px;
-    }
-  }
-  .memo_box{
-    @include size(35%,450px);
-    padding:0 10px;
-    box-sizing: border-box;
-    margin-top:225px;
-    background: rgba(255,255,255,1);
-    textarea{
-      display: inline-block;
-      height:300px;
-      word-break: break-word;
-      background: rgba(255,255,255,0.7);
-    }
-  }
-}
 
 
 

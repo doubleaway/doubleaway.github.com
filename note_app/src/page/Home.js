@@ -22,11 +22,14 @@ return(
             <EditBar/>
         </div>
         <div className="home_content">
+
             {/*<MenuBar/>*/}
             <List/>
         </div>
+        {/*알림창*/}
         {/*<Notification/>*/}
-        <MemoContents/>
+        {/*글쓰기*/}
+        {/*<MemoContents/>*/}
     </section>
 
 )
