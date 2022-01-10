@@ -1,14 +1,19 @@
 import React from "react";
-import {IoIosPricetag} from "react-icons/io";
+import {IoIosPricetag,IoIosStar} from "react-icons/io";
+//
+import moment from 'moment';
+import 'moment/locale/ko';
 
 function MemoContents(){
+    const nowTime = moment().format('YYYY-MM-DD HH:mm:ss');
+    console.log(nowTime);
     return (
         <div className="inputs_box">
             <div className="memo_box">
                 <div className="title_box">
-                    <h1 className="content_title"><input type="checkbox"/></h1>
-                    <p >
-                        <IoIosPricetag size={20}/>
+                    <h1 className="content_title"></h1>
+                    <p>
+                        <IoIosStar size={20}/>
                     </p>
                 </div>
 

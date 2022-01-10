@@ -238,7 +238,7 @@ input:focus {
   height: 50px;
 }
 .memo_box .title_box svg {
-  margin-top: 13px;
+  margin-top: 0px;
 }
 .memo_box .title_box p {
   color: #E1E4E7;
@@ -254,6 +254,9 @@ input:focus {
   top: 0;
   display: flex;
   justify-content: center;
+}
+.inputs_box .title_box svg {
+  margin-top: 15px;
 }
 .inputs_box .memo_box {
   width: 35%;

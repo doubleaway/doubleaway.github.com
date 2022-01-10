@@ -245,7 +245,7 @@ input:focus{
     justify-content: space-between;
     height: 50px;
     svg{
-      margin-top: 13px;
+      margin-top: 0px;
     }
     p{
       color:$color_light_gray;
@@ -263,7 +263,11 @@ input:focus{
   left:0;top:0;
   display: flex;
   justify-content: center;
-
+  .title_box{
+    svg{
+      margin-top: 15px;
+    }
+  }
   .memo_box{
     @include size(35%,450px);
     padding:0 10px;

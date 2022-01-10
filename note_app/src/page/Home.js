@@ -5,7 +5,10 @@ import List from "../component/List";
 import Nav from "../component/Nav";
 import EditBar from "../component/EditBar";
 import Notification from "../component/Notification";
+import MemoContents from "../component/features/MemoContent";
 const Home=()=>{
+const [post,SetPost]=useState(true);
+
 
 const onClose=()=>{
 
@@ -22,7 +25,8 @@ return(
             {/*<MenuBar/>*/}
             <List/>
         </div>
-        <Notification/>
+        {/*<Notification/>*/}
+        <MemoContents/>
     </section>
 
 )
