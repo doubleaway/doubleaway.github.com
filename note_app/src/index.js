@@ -8,8 +8,9 @@ import Notification from "./component/Notification";
 import rootReducer from "./modules";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
+import {composeWithDevTools} from "redux-devtools-extension";
 
-const store=createStore(rootReducer);
+const store=createStore(rootReducer,composeWithDevTools());
 
 
 ReactDOM.render(

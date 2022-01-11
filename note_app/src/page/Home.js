@@ -6,6 +6,7 @@ import Nav from "../component/Nav";
 import EditBar from "../component/EditBar";
 import Notification from "../component/Notification";
 import MemoContents from "../component/features/MemoContent";
+import NotesContainer from "../containers/memoContainer";
 const Home=()=>{
 const [post,SetPost]=useState(true);
 
@@ -29,7 +30,7 @@ return(
         {/*알림창*/}
         {/*<Notification/>*/}
         {/*글쓰기*/}
-        {/*<MemoContents/>*/}
+        <NotesContainer/>
     </section>
 
 )

@@ -4,7 +4,7 @@ import {IoIosPricetag,IoIosStar} from "react-icons/io";
 import moment from 'moment';
 import 'moment/locale/ko';
 
-function MemoContents(){
+function MemoContents(input,memoCon,onChangeInput,onInsert,onToggle,onRemove){
     const nowTime = moment().format('YYYY.MM.DD');
     console.log(nowTime);
     return (
