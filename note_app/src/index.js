@@ -5,10 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MemoContent from "./component/features/MemoContent";
 import Notification from "./component/Notification";
+import rootReducer from "./modules";
+import {createStore} from "redux";
+import {Provider} from "react-redux";
+
+const store=createStore(rootReducer);
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <Provider store={store}>
+          <App />
+      </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
