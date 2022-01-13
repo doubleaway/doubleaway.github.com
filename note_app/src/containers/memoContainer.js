@@ -27,8 +27,8 @@ export default connect(
 //    비구조화 할당을 통해 memo를 분리
     //state.memos.input대신 memos.input사용
     ({memoContents})=>({
-        input:NotesContainer.inputs,
-        memoCon:NotesContainer.memoCon
+        inputs: NotesContainer.inputs,
+        memoCon: NotesContainer.memoCon
     }),
     {
         inputChange,
