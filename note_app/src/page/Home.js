@@ -7,6 +7,7 @@ import EditBar from "../component/EditBar";
 import Notification from "../component/Notification";
 import MemoContents from "../component/features/MemoContent";
 import NotesContainer from "../containers/memoContainer";
+import ListContainer from "../containers/ListContainer";
 const Home=()=>{
 const [post,SetPost]=useState(true);
 
@@ -25,12 +26,12 @@ return(
         <div className="home_content">
 
             {/*<MenuBar/>*/}
-            <List/>
+            <ListContainer/>
         </div>
         {/*알림창*/}
         {/*<Notification/>*/}
         {/*글쓰기*/}
-        <NotesContainer/>
+        {/*<NotesContainer/>*/}
     </section>
 
 )

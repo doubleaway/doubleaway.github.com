@@ -1,39 +1,30 @@
-import React from "react";
-import {connect} from "react-redux";
+import React, {useCallback} from "react";
+import {connect, useDispatch, useSelector} from "react-redux";
 import{add,inputChange,toggle,remove} from "../modules/notes";
 import MemoContents from "../component/features/MemoContent";
-const NotesContainer=({
-    inputs,
-    memoCon,
-    inputChange,
-    add,
-    toggle,
-    remove
-})=>{
-return(
+const NotesContainer=()=>{
+
+    const memoCon=useSelector(state=>state.data_con);
+    const inputs=useSelector(state=>state.input);
+    const dispatch=useDispatch();
+
+    const onAdd=useCallback(text=>dispatch(add(text)),[dispatch]);
+    const onToggle=useCallback(id=>dispatch(toggle(id)),[dispatch]);
+    const onRemove=useCallback(id=>dispatch(remove(id)),[dispatch]);
+    const inputChange=useCallback(text=>dispatch(add(text)),[dispatch]);
+
+    return(
 
     <MemoContents
-        inputs={inputs}
         memoCon={memoCon}
-        onChangeInput={inputChange}
-        onInsert={add}
-        onToggle={toggle}
-        onRemove={remove}/>
-
+        onAdd={onAdd}
+        onToggle={onToggle}
+        onRemove={onRemove}
+        inputChange={inputChange}
+        inputs={inputs}
+        />
     );
-};
+}
 
-export default connect(
-//    비구조화 할당을 통해 memo를 분리
-    //state.memos.input대신 memos.input사용
-    ({memoContents})=>({
-        inputs: NotesContainer.inputs,
-        memoCon: NotesContainer.memoCon
-    }),
-    {
-        inputChange,
-        add,
-        toggle,
-        remove,
-    },
-)(NotesContainer);
+
+export default NotesContainer;

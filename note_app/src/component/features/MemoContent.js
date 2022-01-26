@@ -1,19 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import {IoIosCreate, IoIosPricetag, IoIosStar} from "react-icons/io";
 //
 import moment from 'moment';
 import 'moment/locale/ko';
 import Button from "../button";
 
-function MemoContents(input,memoCon,onChangeInput,onInsert,onToggle,onRemove){
+function MemoContents({memoCon,onAdd,onToggle,inputChange,input}){
     const nowTime = moment().format('YYYY.MM.DD');
-
-    const onChange=e=>onChangeInput(e.target.value);
-    const onSubmit=e=>{
+    const [memo,setMemo]=useState('');
+    const onChange=e=>{
         e.preventDefault();
-        onInsert(input);
-        onChangeInput('');//등록후 초기화
+        setMemo(e.target.value);
+    };
+    const onSubmit=e=>{
+
+        onAdd(memo);
+        setMemo('');//등록후 초기화
+        e.preventDefault();
     }
+
     console.log(nowTime);
     return (
         <div className="inputs_box">
@@ -31,11 +36,12 @@ function MemoContents(input,memoCon,onChangeInput,onInsert,onToggle,onRemove){
                                type="text"
                                className="contents_inputs"
                                name="memo_contents"
-                                  // value={input}
-                                  // onChange={onChange}
+                                  value={memo}
+                                  onChange={onChange}
                         />
+                        <Button type="submit" contents={<IoIosCreate size={30}/>} color="light_gray" classN="edit" contentsText="저장"></Button>
                     </form>
-                    <Button  contents={<IoIosCreate size={30}/>} color="light_gray" classN="edit" contentsText="저장"></Button>
+
                 </div>
                 <div className="color_gray">{nowTime}</div>
             </div>

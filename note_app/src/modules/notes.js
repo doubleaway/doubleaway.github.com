@@ -9,7 +9,7 @@ export const add=(memo)=>({
     type:ADD,
     memo:{
         id:id++,
-        memo,
+        content:memo,
         importance:false,
     }
 });
@@ -123,13 +123,11 @@ function notes(state=data,action){
                 input:action.input
             };
         case TOGGLE:
-            return{
-            ...state,
-            data_con: state.data_con.map(
+            return state.data_con.map(
                 memo=>
                     memo.id===action.id?{...memo,active:!memo.active}:memo
             )
-        };
+
         case ADD:
             return{
                 ...state,
