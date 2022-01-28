@@ -27,7 +27,8 @@ export default {
 
 <style>
 html,body{
-  font-family: 'Itim',cursive;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.25rem;
 }
 body{
   text-align: center;
@@ -47,9 +48,7 @@ button{
 }
 
 #app {
-  font-family: 'Itim',cursive;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Nanum Pen Script', cursive;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
