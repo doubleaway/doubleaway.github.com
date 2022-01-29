@@ -1,30 +1,5 @@
-const ADD='notes/ADD';//추가함
-const REMOVE='notes/REMOVE';//삭제
-const TOGGLE='notes/TOGGLE';//중요 체크/해제
-const INPUT_CHANGE='notes/INPUT_CHANGE';//input값 변경
 
-let id=7;//add될때마다 1씩 추가
 
-export const add=(memo)=>({
-    type:ADD,
-    memo:{
-        id:id++,
-        content:memo,
-        importance:false,
-    }
-});
-export const toggle=(id)=>({
-    type:TOGGLE,
-    id
-});
-export const remove=(id)=>({
-    type:REMOVE,
-    id
-});
-export const inputChange=input=>({
-    type:INPUT_CHANGE,
-    input
-});
 
 
 
@@ -114,8 +89,42 @@ const data={
 
 }
 
+const ADD='notes/ADD';//추가함
+const REMOVE='notes/REMOVE';//삭제
+const TOGGLE='notes/TOGGLE';//중요 체크/해제
+const INPUT_CHANGE='notes/INPUT_CHANGE';//input값 변경
 
-function notes(state=data,action){
+
+let id=7;//add될때마다 1씩 추가
+
+export const add=(memo)=>({
+    type:ADD,
+    memo:{
+        id:id++,
+        content:memo,
+        importance:false,
+    }
+});
+export const toggle=(id)=>({
+    type:TOGGLE,
+    id
+});
+export const remove=(id)=>({
+    type:REMOVE,
+    id
+});
+export const inputChange=input=>({
+    type:INPUT_CHANGE,
+    input
+});
+
+
+
+
+
+
+export default function notes(state=data,action){
+
     switch (action.type){
         case INPUT_CHANGE:
             return{
@@ -123,10 +132,14 @@ function notes(state=data,action){
                 input:action.input
             };
         case TOGGLE:
-            return state.data_con.map(
-                memo=>
-                    memo.id===action.id?{...memo,active:!memo.active}:memo
-            )
+            console.log("toggle");
+            return {
+                ...state,
+            }
+            // state.data_con.map(
+            //     memo=> memo.id===action.id?{...memo,active:!memo.active}:memo
+            // )
+
 
         case ADD:
             return{
@@ -144,4 +157,3 @@ function notes(state=data,action){
     }
 }
 
-export default notes;
