@@ -1,8 +1,8 @@
 <template>
   <div class="inputBox shadow">
     <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo"/>
-    <span class="addContainer" v-on:click="addTodo">
-      <i class="far fa-plus addBtn" aria-hidden="true"></i>
+    <span class="addContainer " v-on:click="addTodo">
+      <i class="fas fa-plus " aria-hidden="true"></i>
     </span>
   </div>
 </template>
@@ -34,8 +34,11 @@
 <style scoped>
   input:focus{
     outline: none;
+    width: auto;
   }
   .inputBox{
+    justify-content: space-between;
+    display: flex;
     background: white;
     height: 50px;
     line-height: 50px;
@@ -44,6 +47,7 @@
   .inputBox input{
     border-style: none;
     font-size: 0.9rem;
+    width: 100%;
   }
   .addContainer{
     float: right;

@@ -3,9 +3,9 @@ export default {
   data:function (){
     return{
       todoItems:[
-          "네?",
-          "꺼져",
-          "가지마"
+          "왤케",
+          "집중",
+          "안댐"
       ]
     }
   },
@@ -13,6 +13,12 @@ export default {
     removeTodo:function (todoItem,index){
     localStorage.removeItem(todoItem);
     this.todoItems.splice(index,1);//특정 index에서 하나를 지울 수 있음
+    },
+    toggleTodo:function (todoItem,index){
+      localStorage.toggleTodo(todoItem,index);
+      todoItem.completed = !todoItem.completed;
+      localStorage.removeItem(todoItem.item);
+      localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
     }
   },
   created:function () {
@@ -65,7 +71,7 @@ li{
 <template>
   <div>
     <ul>
-      <li v-for="todoItem in todoItems" v-bind:key="todoItem">
+      <li v-for="todoItem in todoItems" v-bind:key="todoItem" v-on:click="toggleTodo(todoItem,index)">
         {{todoItem}}
         <span class="removeBtn" v-on:click="removeTodo(todoItem,index)">
           <i class="fas fa-trash-alt"></i>

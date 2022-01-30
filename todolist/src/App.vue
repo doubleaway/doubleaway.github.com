@@ -36,7 +36,7 @@ body{
 }
 input{
   border-style: groove;
-  width: 200px;
+
 }
 
 button{
