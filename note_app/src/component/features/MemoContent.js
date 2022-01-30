@@ -6,6 +6,7 @@ import 'moment/locale/ko';
 import Button from "../button";
 
 function MemoContents({memoCon,onAdd,onToggle,inputChange,input}){
+
     const nowTime = moment().format('YYYY.MM.DD');
     const [memo,setMemo]=useState('');
     const onChange=e=>{

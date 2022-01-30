@@ -11,13 +11,13 @@ const data={
         {id:1,
             title:"title",
             content:"\n" +
-                "input 박스를 클릭 했을떄 나오는 테두리 색상 변경하기\n" +
-                "input:focus {outline:2px solid #d50000;}\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "input 박스를 클릭 했을떄 나오는 테두리 색상 없애기\n" +
-                "input:focus {outline:none;}",
+                "1. 가장 사용률이 높은 상태관리 라이브러리\n" +
+                "2. 사용 시 상태관리 로직을 다른파일에서 관리 할 수 있음 \n" +
+                "3. 글로벌 상태관리도 할수있음\n" +
+                "4. context api+ useReducer를 사용한것과 유사함\n" +
+                "\t개선되기전에 useReducer라는 hook이 만들어지기전에 사용\n" +
+                "5.ntm twends? trend?에서 통계확인가능\n" +
+                "6. 단순히 글로벌상태관리를 위해서거나 글로벌상태가 많이없다면 context쓰는것이 좀더 효율적",
             active:true,
             date:"2021.11.11"
 
@@ -93,9 +93,11 @@ const ADD='notes/ADD';//추가함
 const REMOVE='notes/REMOVE';//삭제
 const TOGGLE='notes/TOGGLE';//중요 체크/해제
 const INPUT_CHANGE='notes/INPUT_CHANGE';//input값 변경
-
+const VISIBLE='notes/VISIBLE';
 
 let id=7;//add될때마다 1씩 추가
+let hiddenVal=false;
+
 
 export const add=(memo)=>({
     type:ADD,
@@ -117,7 +119,9 @@ export const inputChange=input=>({
     type:INPUT_CHANGE,
     input
 });
-
+export const visible=()=>({
+    type:VISIBLE,
+});
 
 
 
@@ -132,7 +136,6 @@ export default function notes(state=data,action){
                 input:action.input
             };
         case TOGGLE:
-            console.log("toggle");
             return {
                 data_con:state.data_con.map( memo => memo.id === action.id ? {...memo, active: !memo.active} : memo)
             }
@@ -140,7 +143,7 @@ export default function notes(state=data,action){
         case ADD:
             return{
                 ...state,
-                data_con: state.data_con.concat(action.memo)
+                data_con: state.data_con.concat(action.memo),
             };
         case REMOVE:
             return {
@@ -148,6 +151,9 @@ export default function notes(state=data,action){
                 data_con: state.data_con.filter(memo=>memo.id!==action.id)
 
             };
+
+
+
         default:return state;
 
     }
