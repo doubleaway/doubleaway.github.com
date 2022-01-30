@@ -134,12 +134,8 @@ export default function notes(state=data,action){
         case TOGGLE:
             console.log("toggle");
             return {
-                ...state,
+                data_con:state.data_con.map( memo => memo.id === action.id ? {...memo, active: !memo.active} : memo)
             }
-            // state.data_con.map(
-            //     memo=> memo.id===action.id?{...memo,active:!memo.active}:memo
-            // )
-
 
         case ADD:
             return{
