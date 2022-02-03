@@ -1,2 +1,62 @@
 @import "reset","mixin","data";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+html,body{
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 18px;
 
+}
+header{
+  @include size(100%,100px);
+  border-bottom: 1px solid #eee;
+  font-size: 2rem;
+  line-height: 100px;
+  padding: 0 5%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.body_box{
+
+  width: 70%;
+  display: flex;
+  align-items: flex-end;
+  font-size: 2rem;
+  padding-top: 70px;
+  &>div{
+    width:40%;
+  }
+  .pic_box{
+    padding-left: 5%;
+    box-sizing: border-box;
+    div{
+      img{
+        height: 100%;
+        outline: 1px solid $color_light_gray;
+        border-radius: 10px;
+      }
+    }
+    .main{
+      @include size(80%,450px);
+
+    }
+    .sub{
+      @include size(100%,80px);
+
+      img{
+        padding: 0 5px;
+        cursor: pointer;
+        &:first-child{
+          padding: 0 0;
+        }
+      }
+    }
+  }
+.ex_box{
+
+}
+
+  .select_box{
+    width:20%;
+    background: #282C30;
+  }
+}

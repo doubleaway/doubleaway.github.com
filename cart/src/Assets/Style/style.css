@@ -1,4 +1,5 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -27,6 +28,62 @@ button {
 svg {
   vertical-align: middle;
   margin-top: -4px;
+}
+
+html, body {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 18px;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #eee;
+  font-size: 2rem;
+  line-height: 100px;
+  padding: 0 5%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.body_box {
+  width: 70%;
+  display: flex;
+  align-items: flex-end;
+  font-size: 2rem;
+  padding-top: 70px;
+}
+.body_box > div {
+  width: 40%;
+}
+.body_box .pic_box {
+  padding-left: 5%;
+  box-sizing: border-box;
+}
+.body_box .pic_box div img {
+  height: 100%;
+  outline: 1px solid #E1E4E7;
+  border-radius: 10px;
+}
+.body_box .pic_box .main {
+  width: 80%;
+  height: 450px;
+}
+.body_box .pic_box .sub {
+  width: 100%;
+  height: 80px;
+}
+.body_box .pic_box .sub img {
+  padding: 0 5px;
+  cursor: pointer;
+}
+.body_box .pic_box .sub img:first-child {
+  padding: 0 0;
+}
+.body_box .select_box {
+  width: 20%;
+  background: #282C30;
 }
 
 /*# sourceMappingURL=style.css.map */
