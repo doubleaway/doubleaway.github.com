@@ -5,6 +5,14 @@ html,body{
   font-size: 18px;
 
 }
+hr{
+
+  border: 1px solid $color_light_gray;
+  margin: {
+    top:15px;
+    bottom: 15px;
+  };
+}
 header{
   @include size(100%,100px);
   border-bottom: 1px solid #eee;
@@ -14,12 +22,17 @@ header{
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  button{
+    @include size(auto,50px);
+    padding: 0 5px;
+    vertical-align: middle;
+    outline: 1px solid $color_light_gray;
+  }
 }
 .body_box{
 
-  width: 70%;
+  width: 80%;
   display: flex;
-  align-items: flex-end;
   font-size: 2rem;
   padding-top: 70px;
   &>div{
@@ -52,7 +65,29 @@ header{
     }
   }
 .ex_box{
+  padding: 0 2.5%;
+  box-sizing: border-box;
+//  안내 박스
+  .info_box{
+    font-size: 1rem;
+    .axent{
+      color:$main_color;
+      font:{
+        size: 1.25rem;
+        weight: bold;
+      }
 
+    }
+  }
+//  색깔 변경 버튼
+.color_change_button_box{
+  .btn_color_change{
+    @include size(50px,50px);
+    border-radius: 100%;
+    outline: 1px solid $color_light_gray;
+    margin-left: 15px;
+  }
+}
 }
 
   .select_box{
