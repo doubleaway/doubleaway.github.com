@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 // import ImgBox from "../Components/ImgBox";
 import Button from "../Components/button";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -50,12 +50,17 @@ return(
     
 }
 const ImgBox=({classN,color,number,mainImg})=>{
-    const [imgChange,setImgChange]=useState(mainImg);
+    const [imgChange,setImgChange]=useState(1);
+    const [count, setCount] = useState(0);
     var mainSrc="";
-    const imgChangeFunc=(num)=>{
-        setImgChange(num);
-        console.log(mainSrc);
-    }
+    const imgChangeFunc= useCallback((num)=> {
+
+            setImgChange(num+1);
+            setCount(prevCount => prevCount + 1);
+            console.log(count);
+        },[imgChange]
+    )
+
     mainSrc="img/"+color+"cloth ("+imgChange+").png";
     let imgsrc=[];
     for(var i=0; i<Number(number);i++){
@@ -63,9 +68,12 @@ const ImgBox=({classN,color,number,mainImg})=>{
     }
     const srcO="img/"+color+'cloth (';
     const srcE=").png";
-    const mainImgBox="<img src="+mainSrc+"/>";
+
     return(
-        classN=="main"?{mainImgBox}:<div className="sub">{imgsrc.map(img=>(<img key={img} src={srcO+img+srcE} onClick={()=>imgChangeFunc(img)}/>))}</div>
+        <>
+            {classN=='main'?<div className="main"><img src={srcO+imgChange+srcE}/><p>{count}</p></div>:''}
+            {classN=='sub'? <div className="sub">{imgsrc.map(img=>(<img key={img} src={srcO+img+srcE} onClick={()=>imgChangeFunc(img)}/>))}</div>:''}
+        </>
     )
 }
 
