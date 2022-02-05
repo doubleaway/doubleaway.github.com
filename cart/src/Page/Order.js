@@ -52,27 +52,28 @@ return(
 const ImgBox=({classN,color,number,mainImg})=>{
     const [imgChange,setImgChange]=useState(1);
     const [count, setCount] = useState(0);
-    var mainSrc="";
-    const imgChangeFunc= useCallback((num)=> {
+    const imgChangeFunc= useCallback(()=> {
 
-            setImgChange(num+1);
+            setImgChange(this);
             setCount(prevCount => prevCount + 1);
-            console.log(count);
+            console.log(imgChange);
         },[imgChange]
     )
+    let img;
+    img=<li></li>;
 
-    mainSrc="img/"+color+"cloth ("+imgChange+").png";
     let imgsrc=[];
     for(var i=0; i<Number(number);i++){
         imgsrc.push(i+1);
     }
     const srcO="img/"+color+'cloth (';
     const srcE=").png";
-
+    var mainSrc;
+    mainSrc=<img src={srcO+imgChange+srcE}/>
     return(
         <>
-            {classN=='main'?<div className="main"><img src={srcO+imgChange+srcE}/><p>{count}</p></div>:''}
-            {classN=='sub'? <div className="sub">{imgsrc.map(img=>(<img key={img} src={srcO+img+srcE} onClick={()=>imgChangeFunc(img)}/>))}</div>:''}
+            {classN=='main'?<div className="main"><img src={srcO+imgChange+srcE}/><p>{count}</p>{img} {mainSrc}</div>:''}
+            {classN=='sub'? <div className="sub">{imgsrc.map(img=>(<img key={img} src={srcO+img+srcE} onClick={imgChangeFunc}/>))}</div>:''}
         </>
     )
 }
