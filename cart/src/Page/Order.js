@@ -42,7 +42,22 @@ return(
                    <Button color="black" contents="" classN="color_change"/>
                </div>
            </div>
-           <div className="select_box">3</div>
+           <div className="select_box">
+               <div>
+                <select>
+                    <option>사이즈</option>
+                </select>
+               </div>
+               <div>
+                <select>
+                    <option>색상구분</option>
+                </select>
+               </div>
+               <div>최대 구매 수량 5개</div>
+               <div>
+                   <CartList size="X" color="Red" price="26000"/>
+               </div>
+           </div>
         </div>
     </section>
 )
@@ -51,11 +66,9 @@ return(
 }
 const ImgBox=({classN,color,number,mainImg})=>{
     const [imgChange,setImgChange]=useState(1);
-    const [count, setCount] = useState(0);
     const imgChangeFunc= useCallback(()=> {
 
             setImgChange(this);
-            setCount(prevCount => prevCount + 1);
             console.log(imgChange);
         },[imgChange]
     )
@@ -72,9 +85,36 @@ const ImgBox=({classN,color,number,mainImg})=>{
     mainSrc=<img src={srcO+imgChange+srcE}/>
     return(
         <>
-            {classN=='main'?<div className="main"><img src={srcO+imgChange+srcE}/><p>{count}</p>{img} {mainSrc}</div>:''}
+            {classN=='main'?<div className="main"><img src={srcO+imgChange+srcE}/></div>:''}
             {classN=='sub'? <div className="sub">{imgsrc.map(img=>(<img key={img} src={srcO+img+srcE} onClick={imgChangeFunc}/>))}</div>:''}
         </>
+    )
+}
+
+const CartList=({size,color,price})=>{
+    const [count,setCount]=useState(0);
+    const [calc,setCalc]=useState(0);
+    if(count<0&&count==0)
+    setCount(0);
+    
+
+    console.log(price)
+    const onIncrease=()=>{setCount(count=>count+1);setCalc((Number(price)*(count+1)))}
+    const onDecrese=()=>{setCount(count=>count-1);setCalc((Number(price)*(count+1)))}
+    var result=0;
+
+
+    return(
+        <div className="">
+            <p><span>{size}</span><span>{color}</span></p>
+            <div>
+                <span onClick={onDecrese}>-</span>
+                <span className="count_box">{count}</span>
+                <span onClick={onIncrease}>+</span>
+            </div>
+            <h2>{calc}</h2>
+        </div>
+
     )
 }
 
