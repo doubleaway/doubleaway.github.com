@@ -8,14 +8,24 @@ const Order=()=>{
     const [count,setCount]=useState(0);
     const [allCount,setAllCount]=useState(0);
     const [calc,setCalc]=useState(0);
-    const price=26000;
-    const onIncrease=(count)=>{
-        setCount(count);
-        // setCalc((Number(price)*(count+1)));
- 
+    if(allCount>5){
+
+        setAllCount(5);
     }
-    const allCountFunc=(allCount)=>{setAllCount(allCount)}
-    const alldeCountFunc=(allCount)=>{setAllCount(allCount)}
+    
+    const price=26000;
+    const onIncrease=(count)=>{setCount(count);}
+    const allCountFunc=(allCount)=>{
+
+        setAllCount(allCount);
+        setCalc((Number(price)*(allCount)));
+
+    }
+    const alldeCountFunc=(allCount)=>{
+        setAllCount(allCount);
+        setCalc((Number(price)*(allCount)));
+    
+    }
     const onDecrese=(count)=>{
         setCount(count);
         // setCalc((Number(price)*(count)));
@@ -74,7 +84,8 @@ return(
                    <CartList size="M" color="gray" count={count} allCount={allCount} onIncrease={onIncrease} onDecrese={onDecrese} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc}/>
                </div>
                <div>
-                   {allCount} 가불기
+                   <p><span>수량: </span>{allCount} </p>
+                    <p>{calc}<span>원</span></p>
                </div>
            </div>
         </div>
@@ -116,18 +127,20 @@ const CartList=({size,color,count,onIncrease,onDecrese,allCount,allCountFunc,all
         onDecrese(0);
         // alldeCountFunc(0);
     }
+
     
     const onClick=()=>{
         alldeCountFunc(allCount-1);
         setTest(test-1);
         onDecrese(test);
 
-        
     }
     const increase=()=>{
-        allCountFunc(allCount+1);
-        setTest(test+1)
-        onIncrease(test);
+        if(allCount<5){
+            allCountFunc(allCount+1);
+            setTest(test+1)
+            onIncrease(test);
+        }
 
     }
    
