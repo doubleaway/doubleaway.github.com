@@ -25,42 +25,46 @@ const ADD='cart/ADD';//추가함
 const REMOVE='cart/REMOVE';//삭제
 const QUANTITY='cart/quantity'; //수량추가
 const CALC='cart/calc';//계산
+const COLOR='cart/color';//color
 
 let id=0;//add될때마다 1씩 추가
 
-export const add=(memo)=>({
+export const add=(memo,title,)=>({
     type:ADD,
     memo:{
         id:id++,
+        title:title,
         content:memo,
         importance:false,
     }
 });
 export const QUANTITY=(id)=>({
-    type:TOGGLE,
+    type:quanity,
     id
 });
 export const remove=(id)=>({
     type:REMOVE,
     id
 });
-export const remove=(val)=>({
-    type:REMOVE,
+export const calc=(val)=>({
+    type:CALC,
     val
 });
 
+export const colorChange=(color)=>({
+    type:
+})
 
 
 
 
-
-export default function notes(state=data,action){
+export default function cart(state=data,action){
 
     switch (action.type){
-        case INPUT_CHANGE:
+        case ADD:
             return{
                 ...state,
-                input:action.input
+                
             };
         case TOGGLE:
             return {

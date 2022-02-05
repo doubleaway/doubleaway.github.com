@@ -3,9 +3,8 @@ import {connect, useDispatch, useSelector} from "react-redux";
 import{add,inputChange,toggle,remove} from "../modules/notes";
 import MemoContents from "../component/features/MemoContent";
 const NotesContainer=()=>{
-
-    const memoCon=useSelector(state=>state.data_con);
-    const inputs=useSelector(state=>state.input);
+    const cartContents=useSelector(state=>state.data_con)
+    // const inputs=useSelector(state=>state.input);
     const dispatch=useDispatch();
 
     const onAdd=useCallback(text=>dispatch(add(text)),[dispatch]);

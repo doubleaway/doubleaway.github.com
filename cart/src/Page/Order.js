@@ -5,7 +5,22 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 
 const Order=()=>{
+    const [count,setCount]=useState(0);
+    const [allCount,setAllCount]=useState(0);
+    const [calc,setCalc]=useState(0);
+    const price=26000;
+    const onIncrease=(count)=>{
+        setCount(count);
+        // setCalc((Number(price)*(count+1)));
+ 
+    }
+    const allCountFunc=(allCount)=>{setAllCount(allCount)}
+    const alldeCountFunc=(allCount)=>{setAllCount(allCount)}
+    const onDecrese=(count)=>{
+        setCount(count);
+        // setCalc((Number(price)*(count)));
 
+    }
 return(
     <section >
         <header>
@@ -55,7 +70,11 @@ return(
                </div>
                <div>최대 구매 수량 5개</div>
                <div>
-                   <CartList size="X" color="Red" price="26000"/>
+                   <CartList size="X" color="Red" count={count} allCount={allCount} onIncrease={onIncrease} onDecrese={onDecrese} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc}/>
+                   <CartList size="M" color="gray" count={count} allCount={allCount} onIncrease={onIncrease} onDecrese={onDecrese} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc}/>
+               </div>
+               <div>
+                   {allCount} 가불기
                </div>
            </div>
         </div>
@@ -91,16 +110,28 @@ const ImgBox=({classN,color,number,mainImg})=>{
     )
 }
 
-const CartList=({size,color,price})=>{
-    const [count,setCount]=useState(0);
-    const [calc,setCalc]=useState(0);
-    if(count<0)
-    setCount(0);
+const CartList=({size,color,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc})=>{
+    const [test,setTest]=useState(0);
+    if(count<0||allCount<0){
+        onDecrese(0);
+        // alldeCountFunc(0);
+    }
     
+    const onClick=()=>{
+        alldeCountFunc(allCount-1);
+        setTest(test-1);
+        onDecrese(test);
 
-    console.log(price)
-    const onIncrease=()=>{setCount(count+1);setCalc((Number(price)*(count+1)));console.log(count)}
-    const onDecrese=()=>{setCount(count-1);setCalc((Number(price)*(count)));console.log("de"+count)}
+        
+    }
+    const increase=()=>{
+        allCountFunc(allCount+1);
+        setTest(test+1)
+        onIncrease(test);
+
+    }
+   
+ 
     var result=0;
 
 
@@ -108,11 +139,11 @@ const CartList=({size,color,price})=>{
         <div className="">
             <p><span>{size}</span><span>{color}</span></p>
             <div>
-                <span onClick={onDecrese}>-</span>
-                <span className="count_box">{count}</span>
-                <span onClick={onIncrease}>+</span>
+                <span onClick={onClick}>-</span>
+                <span className="count_box">{test}</span>
+                <span onClick={increase}>+</span>
             </div>
-            <h2>{calc}</h2> 
+            <h2></h2> 
         </div>
 
     )
