@@ -94,13 +94,13 @@ const ImgBox=({classN,color,number,mainImg})=>{
 const CartList=({size,color,price})=>{
     const [count,setCount]=useState(0);
     const [calc,setCalc]=useState(0);
-    if(count<0&&count==0)
+    if(count<0)
     setCount(0);
     
 
     console.log(price)
-    const onIncrease=()=>{setCount(count=>count+1);setCalc((Number(price)*(count+1)))}
-    const onDecrese=()=>{setCount(count=>count-1);setCalc((Number(price)*(count+1)))}
+    const onIncrease=()=>{setCount(count+1);setCalc((Number(price)*(count+1)));console.log(count)}
+    const onDecrese=()=>{setCount(count-1);setCalc((Number(price)*(count)));console.log("de"+count)}
     var result=0;
 
 
@@ -112,7 +112,7 @@ const CartList=({size,color,price})=>{
                 <span className="count_box">{count}</span>
                 <span onClick={onIncrease}>+</span>
             </div>
-            <h2>{calc}</h2>
+            <h2>{calc}</h2> 
         </div>
 
     )
