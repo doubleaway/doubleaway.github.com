@@ -33,6 +33,11 @@ const Order=()=>{
         // setCalc((Number(price)*(count)));
 
     }
+
+
+    // select box
+    const size=["사이즈를 선택해주세요",'M',"S","XL","XS","L"];
+    const color=["색상을 선택해주세요","Gray","Black","Red"];
 return(
     <section >
         <header>
@@ -71,17 +76,20 @@ return(
            </div>
            <div className="select_box">
                <div>
-                    <SelectBox select="size"/>
+                    <SelectBox select={size}/>
                </div>
                <div>
-                    <SelectBox select="color"/>
+                    <SelectBox select={color}/>
                </div>
+               <hr/>
                <div>최대 구매 수량 5개</div>
                <div>
                    <ListContiner count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} />
                </div>
+               <hr/>
                <div>
                    <p><span>수량: </span>{allCount} </p>
+                   <hr/>
                     <p>{calc}<span>원</span></p>
                </div>
            </div>
@@ -118,47 +126,6 @@ const ImgBox=({classN,color,number,mainImg})=>{
     )
 }
 
-{/*const CartList=({size,color,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc})=>{
-    const [test,setTest]=useState(0);
-    if(count<0||allCount<0){
-        onDecrese(0);
-        // alldeCountFunc(0);
-    }
-
-    
-    const onClick=()=>{
-        alldeCountFunc(allCount-1);
-        setTest(test-1);
-        onDecrese(test);
-
-    }
-    const increase=()=>{
-        if(allCount<5){
-            allCountFunc(allCount+1);
-            setTest(test+1)
-            onIncrease(test);
-        }
-
-    }
-   
- 
-    var result=0;
-
-
-    return(
-        <div className="">
-            <p><span>{size}</span><span>{color}</span></p>
-            <div>
-                <span onClick={onClick}>-</span>
-                <span className="count_box">{test}</span>
-                <span onClick={increase}>+</span>
-            </div>
-            <h2></h2> 
-        </div>
-
-    )
-}
-*/}
 
 
 export default Order;

@@ -4,7 +4,7 @@ import react,{useState} from  "react";
 const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc})=>{
     return (
     <>
-        {console.log(data.id)}
+     
          {  data.map(
                 data=>(<ListItem data={data} count={count} onDecrese={onDecrese} onIncrease={onIncrease} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc}/>)
             )
@@ -40,7 +40,7 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
     return   (
         <div>
          <div className="">
-            <p><span>{size}</span><span>{color}</span></p>
+            <p><span>{size}</span> / <span>{color}</span></p>
             <div>
                 <span onClick={onClick}>-</span>
                 <span className="count_box">{test}</span>
