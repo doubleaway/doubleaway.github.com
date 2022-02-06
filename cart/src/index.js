@@ -5,9 +5,18 @@ import "../src/Assets/Style/style.css"
 import reportWebVitals from './reportWebVitals';
 import Order from "./Page/Order";
 
+import rootReducer from "./Modules";
+import {createStore} from "redux";
+import {Provider} from "react-redux";
+//import {composeWithDevTools} from "redux-devtools-extension";//
+
+const store=createStore(rootReducer);
+
 ReactDOM.render(
   <React.StrictMode>
-    <Order />
+    <Provider store={store}>
+      <Order />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

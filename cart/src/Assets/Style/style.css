@@ -149,4 +149,13 @@ header button {
 .body_box .select_box {
   width: 20%;
 }
+
+.body_box .select_box select {
+  width: 100%;
+  height: 50px;
+}
+
+.body_box .select_box select option {
+  height: 50px;
+}
 /*# sourceMappingURL=style.css.map */

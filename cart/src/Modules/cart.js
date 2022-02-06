@@ -13,9 +13,17 @@ const data=[
             size:'M',
             price:25000,
             amount:0,
-            cart:false,
+
         },
 
+        {id:1,
+            title:"검은색",
+            color:"black",
+            size:'S',
+            price:25000,
+            amount:0,
+
+        },
 
     ]
 
@@ -23,9 +31,8 @@ const data=[
 
 const ADD='cart/ADD';//추가함
 const REMOVE='cart/REMOVE';//삭제
-const QUANTITY='cart/quantity'; //수량추가
-const CALC='cart/calc';//계산
-const COLOR='cart/color';//color
+const QUANTITY='cart/QUANTITY'; //수량추가
+const COLOR='cart/COLOR';//color 변경
 
 let id=0;//add될때마다 1씩 추가
 
@@ -38,22 +45,18 @@ export const add=(memo,title,)=>({
         importance:false,
     }
 });
-export const QUANTITY=(id)=>({
-    type:quanity,
+export const quantity=(id)=>({
+    type:QUANTITY,
     id
 });
 export const remove=(id)=>({
     type:REMOVE,
     id
 });
-export const calc=(val)=>({
-    type:CALC,
-    val
-});
 
 export const colorChange=(color)=>({
-    type:
-})
+    type: COLOR
+});
 
 
 
@@ -64,18 +67,17 @@ export default function cart(state=data,action){
         case ADD:
             return{
                 ...state,
-                
+                data_con: state.data_con.concat(action.memo),
             };
-        case TOGGLE:
+        case QUANTITY:
             return {
                 data_con:state.data_con.map( memo => memo.id === action.id ? {...memo, active: !memo.active} : memo)
             }
 
-        case ADD:
-            return{
-                ...state,
-                data_con: state.data_con.concat(action.memo),
-            };
+        case COLOR:
+          return{
+              ...state
+          }
         case REMOVE:
             return {
                 ...state,

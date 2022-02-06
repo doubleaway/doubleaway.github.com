@@ -2,6 +2,7 @@ import React, {useCallback, useState} from "react";
 // import ImgBox from "../Components/ImgBox";
 import Button from "../Components/button";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import ListContiner from "../Conatiners/ListContainer";
 
 
 const Order=()=>{
@@ -51,7 +52,7 @@ return(
                <hr/>
                <div className="price_box">
                    <h3>Price</h3>
-                   <h2>65,000</h2>
+                   <h2>26,000</h2>
                </div>
                <hr/>
                <div className="info_box">
@@ -80,8 +81,7 @@ return(
                </div>
                <div>최대 구매 수량 5개</div>
                <div>
-                   <CartList size="X" color="Red" count={count} allCount={allCount} onIncrease={onIncrease} onDecrese={onDecrese} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc}/>
-                   <CartList size="M" color="gray" count={count} allCount={allCount} onIncrease={onIncrease} onDecrese={onDecrese} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc}/>
+                   <ListContiner count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} />
                </div>
                <div>
                    <p><span>수량: </span>{allCount} </p>
@@ -121,7 +121,7 @@ const ImgBox=({classN,color,number,mainImg})=>{
     )
 }
 
-const CartList=({size,color,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc})=>{
+{/*const CartList=({size,color,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc})=>{
     const [test,setTest]=useState(0);
     if(count<0||allCount<0){
         onDecrese(0);
@@ -161,7 +161,7 @@ const CartList=({size,color,count,onIncrease,onDecrese,allCount,allCountFunc,all
 
     )
 }
-
+*/}
 
 
 export default Order;

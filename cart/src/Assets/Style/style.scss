@@ -93,5 +93,11 @@ header{
   .select_box{
     width:20%;
     // background: #282C30;
+    select{
+      @include size(100%,50px);
+      option{
+        height: 50px;
+      }
+    }
   }
 }
