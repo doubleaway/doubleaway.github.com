@@ -1,5 +1,6 @@
 
-
+const size=['M',"S","XL","XS","L"];
+const color=["Gray","Black","Red"];
 
 
 

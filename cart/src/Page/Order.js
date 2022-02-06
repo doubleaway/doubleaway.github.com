@@ -3,6 +3,7 @@ import React, {useCallback, useState} from "react";
 import Button from "../Components/button";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ListContiner from "../Conatiners/ListContainer";
+import SelectBox from "../Components/SelectBox";
 
 
 const Order=()=>{
@@ -70,14 +71,10 @@ return(
            </div>
            <div className="select_box">
                <div>
-                <select>
-                    <option>사이즈</option>
-                </select>
+                    <SelectBox select="size"/>
                </div>
                <div>
-                <select>
-                    <option>색상구분</option>
-                </select>
+                    <SelectBox select="color"/>
                </div>
                <div>최대 구매 수량 5개</div>
                <div>
