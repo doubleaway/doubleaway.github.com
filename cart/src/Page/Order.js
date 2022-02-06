@@ -10,12 +10,28 @@ const Order=()=>{
     const [count,setCount]=useState(0);
     const [allCount,setAllCount]=useState(0);
     const [calc,setCalc]=useState(0);
+
+    // img
+    const [img,setImg]=useState("1");
+    const [colorCh,setColorCh]=useState("black");
+    const imgChange=(img)=>{
+        setImg(img);
+    }
+
+    
+
+
+
     if(allCount>5){
 
         setAllCount(5);
     }
     
     const price=26000;
+
+
+
+    // 카운트
     const onIncrease=(count)=>{setCount(count);}
     const allCountFunc=(allCount)=>{
 
@@ -33,8 +49,6 @@ const Order=()=>{
         // setCalc((Number(price)*(count)));
 
     }
-
-
     // select box
     const size=["사이즈를 선택해주세요",'M',"S","XL","XS","L"];
     const color=["색상을 선택해주세요","Gray","Black","Red"];
@@ -48,8 +62,12 @@ return(
         </header>
         <div className="body_box">
            <div className="pic_box">
-               <ImgBox number="1" classN="main" color="black" mainImg="1"/>
-                <ImgBox number="4" classN="sub" color="black"/>
+                <div className="main">
+                    <img src={"img/"+colorCh+"cloth ("+img+").png"}/>
+                </div>
+               
+                    <ImgBox number="4" color="black" classN="sub" imgChange={imgChange}/>
+               
            </div>
            <div className="ex_box">
                <h1>
@@ -75,14 +93,10 @@ return(
                </div>
            </div>
            <div className="select_box">
-               <div>
                     <SelectBox select={size}/>
-               </div>
-               <div>
                     <SelectBox select={color}/>
-               </div>
                <hr/>
-               <div>최대 구매 수량 5개</div>
+               <p>최대 구매 수량 5개</p>
                <hr/>
                <div>
                    <ListContainer count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} />

@@ -6,19 +6,27 @@
 const data=[
 
         {id:0,
-            title:"title",
-            color:"gray",
+
+            color:"Gray",
             size:'M',
-            price:25000,
+            price:26000,
             amount:0,
 
         },
 
-        {id:1,
-            title:"검은색",
-            color:"black",
+        {id:2,
+  
+            color:"Black",
             size:'S',
-            price:25000,
+            price:26000,
+            amount:0,
+
+        },
+        {id:3,
+ 
+            color:"Red",
+            size:'XL',
+            price:26000,
             amount:0,
 
         },

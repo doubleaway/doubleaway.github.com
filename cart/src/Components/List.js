@@ -41,6 +41,7 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
     return   (
        
          <div className="list_item">
+
             <p><span>{size}</span> / <span>{color}</span></p>
             <div className="count_box">
                 <span onClick={onClick}>-</span>

@@ -14,7 +14,7 @@ hr{
   };
 }
 // 기타
-.axent{font-size: 1.75em}
+.axent{font-size: 1.5em}
 
 // button
 .close_btn{
@@ -26,7 +26,8 @@ hr{
   line-height: 20px;
   color:$color_black;
 }
-
+.btn{cursor: pointer;}
+//button 끝
 header{
   @include size(100%,100px);
   border-bottom: 1px solid #eee;

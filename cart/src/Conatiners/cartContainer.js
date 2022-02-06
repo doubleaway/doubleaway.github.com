@@ -1,9 +1,9 @@
 import React, {useCallback} from "react";
 import {connect, useDispatch, useSelector} from "react-redux";
-import{add,inputChange,toggle,remove} from "../modules/notes";
+import {}
 import MemoContents from "../component/features/MemoContent";
 const NotesContainer=()=>{
-    const cartContents=useSelector(state=>state.data_con)
+    const cartContents=useSelector(state=>state.data_con);
     // const inputs=useSelector(state=>state.input);
     const dispatch=useDispatch();
 
