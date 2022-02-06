@@ -13,6 +13,20 @@ hr{
     bottom: 15px;
   };
 }
+// 기타
+.axent{font-size: 1.75em}
+
+// button
+.close_btn{
+  @include size(20px,20px);
+  background-color: $color_light_gray;
+  border-radius: 100%;
+  display: inline-block;
+  text-align: center;
+  line-height: 20px;
+  color:$color_black;
+}
+
 header{
   @include size(100%,100px);
   border-bottom: 1px solid #eee;
@@ -33,7 +47,7 @@ header{
 
   width: 80%;
   display: flex;
-  font-size: 2rem;
+  font-size: 1.25rem;
   padding-top: 70px;
   &>div{
     width:40%;
@@ -92,12 +106,54 @@ header{
 
   .select_box{
     width:20%;
+    border:1px solid $color_light_gray;
+    padding: 15px;
+    box-sizing: border-box;
     // background: #282C30;
     select{
       @include size(100%,50px);
+      border:1px solid $color_light_gray;
       option{
         height: 50px;
       }
+    }
+    .result_box{
+      display: flex;
+      justify-content: space-between;
+      p{
+        color: red;
+        line-height: 30px;
+
+      }
+    }
+    //리스트 내부 아이템
+    .list_item{
+        position: relative;
+        border:{
+          bottom: 1px solid $color_light_gray;
+     
+
+        }
+        .close_btn{
+            position: absolute;
+            right:0px;
+            top: 20px;
+        }
+        padding:{
+          top:15px;
+          bottom:15px;
+        }
+        .count_box{
+            margin-top: 5px;
+          span{
+            outline: 1px solid $color_light_gray;
+            @include size(30px,30px);
+            display: inline-block;
+            text-align: center;
+            line-height: 30px;
+          }
+        }
+
     }
   }
 }

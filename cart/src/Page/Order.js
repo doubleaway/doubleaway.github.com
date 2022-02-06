@@ -2,7 +2,7 @@ import React, {useCallback, useState} from "react";
 // import ImgBox from "../Components/ImgBox";
 import Button from "../Components/button";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import ListContiner from "../Conatiners/ListContainer";
+import ListContainer from "../Conatiners/ListContainer";
 import SelectBox from "../Components/SelectBox";
 
 
@@ -84,13 +84,13 @@ return(
                <hr/>
                <div>최대 구매 수량 5개</div>
                <div>
-                   <ListContiner count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} />
+                   <ListContainer count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} />
                </div>
                <hr/>
-               <div>
-                   <p><span>수량: </span>{allCount} </p>
-                   <hr/>
-                    <p>{calc}<span>원</span></p>
+               <div className="result_box">
+                   <p><span>총 </span>{allCount}개</p>
+                  
+                  <p> <span className="axent">{calc}</span><span>원</span></p>
                </div>
            </div>
         </div>
@@ -104,7 +104,6 @@ const ImgBox=({classN,color,number,mainImg})=>{
     const imgChangeFunc= useCallback(()=> {
 
             setImgChange(this);
-            console.log(imgChange);
         },[imgChange]
     )
     let img;

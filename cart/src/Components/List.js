@@ -16,9 +16,10 @@ const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFun
 const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc})=>{
     const [test,setTest]=useState(0);
     const {color,size}=data;
-    if(count<0||allCount<0){
-        onDecrese(0);
-        // alldeCountFunc(0);
+    if(test<0){
+      setTest(0);
+      alldeCountFunc(0);
+      onDecrese(0);
     }
 
     
@@ -38,17 +39,15 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
     }
    
     return   (
-        <div>
-         <div className="">
+       
+         <div className="list_item">
             <p><span>{size}</span> / <span>{color}</span></p>
-            <div>
+            <div className="count_box">
                 <span onClick={onClick}>-</span>
                 <span className="count_box">{test}</span>
                 <span onClick={increase}>+</span>
             </div>
-            <h2></h2> 
-        </div>
-
+            <span className="close_btn">x</span>
         </div>
     )
 }
