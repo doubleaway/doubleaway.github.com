@@ -83,6 +83,7 @@ return(
                </div>
                <hr/>
                <div>최대 구매 수량 5개</div>
+               <hr/>
                <div>
                    <ListContainer count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} />
                </div>

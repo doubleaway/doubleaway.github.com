@@ -16,17 +16,17 @@ const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFun
 const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc})=>{
     const [test,setTest]=useState(0);
     const {color,size}=data;
-    if(test<0){
-      setTest(0);
-      alldeCountFunc(0);
-      onDecrese(0);
-    }
+
 
     
     const onClick=()=>{
+        if(allCount<=0||test<=0){}
+
+        else{
         alldeCountFunc(allCount-1);
         setTest(test-1);
         onDecrese(test);
+        }
 
     }
     const increase=()=>{
