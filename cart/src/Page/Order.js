@@ -3,6 +3,7 @@ import React, {useCallback, useState} from "react";
 import Button from "../Components/button";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ListContainer from "../Conatiners/ListContainer";
+import ImgBox from "../Components/ImgBox";
 import SelectBox from "../Components/SelectBox";
 
 
@@ -11,21 +12,20 @@ const Order=()=>{
     const [allCount,setAllCount]=useState(0);
     const [calc,setCalc]=useState(0);
 
+    const colors=['black','gray','red'];
     // img
     const [img,setImg]=useState("1");
+    const imgChange=(img)=>{setImg(img);}
+
+    //color
     const [colorCh,setColorCh]=useState("black");
-    const imgChange=(img)=>{
-        setImg(img);
-    }
+    const colorChange=useCallback((color)=>{setColorCh(color);},[colorCh]);
 
     
 
 
 
-    if(allCount>5){
-
-        setAllCount(5);
-    }
+    if(allCount>5){setAllCount(5);}
     
     const price=26000;
 
@@ -44,14 +44,12 @@ const Order=()=>{
         setCalc((Number(price)*(allCount)));
     
     }
-    const onDecrese=(count)=>{
-        setCount(count);
-        // setCalc((Number(price)*(count)));
-
-    }
+    const onDecrese=(count)=>{setCount(count);}
     // select box
     const size=["사이즈를 선택해주세요",'M',"S","XL","XS","L"];
     const color=["색상을 선택해주세요","Gray","Black","Red"];
+
+
 return(
     <section >
         <header>
@@ -66,7 +64,7 @@ return(
                     <img src={"img/"+colorCh+"cloth ("+img+").png"}/>
                 </div>
                
-                    <ImgBox number="4" color="black" classN="sub" imgChange={imgChange}/>
+                    <ImgBox number="4"  classN="sub" imgChange={imgChange} color={colorCh} colorChange={colorChange}/>
                
            </div>
            <div className="ex_box">
@@ -86,10 +84,12 @@ return(
                <hr/>
                <div className="color_change_button_box">
                    <h3>Color</h3>
-
-                   <Button color="red" contents="" classN="color_change"/>
-                   <Button color="gray" contents="" classN="color_change"/>
-                   <Button color="black" contents="" classN="color_change"/>
+                   {/*<Button color="red" contents="" classN="color_change" onClick={colorChange} colorCh={colorCh}/>*/}
+                   {/*<Button color="gray" contents="" classN="color_change"onClick={colorChange} colorCh={colorCh}/>*/}
+                   {/*<Button color="black" contents="" classN="color_change" onClick={colorChange} colorCh={colorCh}/>*/}
+                   <ul>
+                       {colors.map(color=>(<li className={"btn_color_change back_"+color} key={color} onClick={()=>{colorChange(color)}}></li>))}
+                   </ul>
                </div>
            </div>
            <div className="select_box">
@@ -114,31 +114,31 @@ return(
     
     
 }
-const ImgBox=({classN,color,number,mainImg})=>{
-    const [imgChange,setImgChange]=useState(1);
-    const imgChangeFunc= useCallback(()=> {
-
-            setImgChange(this);
-        },[imgChange]
-    )
-    let img;
-    img=<li></li>;
-
-    let imgsrc=[];
-    for(var i=0; i<Number(number);i++){
-        imgsrc.push(i+1);
-    }
-    const srcO="img/"+color+'cloth (';
-    const srcE=").png";
-    var mainSrc;
-    mainSrc=<img src={srcO+imgChange+srcE}/>
-    return(
-        <>
-            {classN=='main'?<div className="main"><img src={srcO+imgChange+srcE}/></div>:''}
-            {classN=='sub'? <div className="sub">{imgsrc.map(img=>(<img key={img} src={srcO+img+srcE} onClick={imgChangeFunc}/>))}</div>:''}
-        </>
-    )
-}
+// const ImgBox=({classN,color,number,mainImg})=>{
+//     const [imgChange,setImgChange]=useState(1);
+//     const imgChangeFunc= useCallback(()=> {
+//
+//             setImgChange(this);
+//         },[imgChange]
+//     )
+//     let img;
+//     img=<li></li>;
+//
+//     let imgsrc=[];
+//     for(var i=0; i<Number(number);i++){
+//         imgsrc.push(i+1);
+//     }
+//     const srcO="img/"+color+'cloth (';
+//     const srcE=").png";
+//     var mainSrc;
+//     mainSrc=<img src={srcO+imgChange+srcE}/>
+//     return(
+//         <>
+//             {classN=='main'?<div className="main"><img src={srcO+imgChange+srcE}/></div>:''}
+//             {classN=='sub'? <div className="sub">{imgsrc.map(img=>(<img key={img} src={srcO+img+srcE} onClick={imgChangeFunc}/>))}</div>:''}
+//         </>
+//     )
+// }
 
 
 

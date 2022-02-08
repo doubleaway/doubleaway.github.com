@@ -102,6 +102,13 @@ header{
     outline: 1px solid $color_light_gray;
     margin-left: 15px;
   }
+  ul {
+    display: flex;
+    margin-top: 15px;
+    li{
+      cursor: pointer;
+    }
+  }
 }
 }
 

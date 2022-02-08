@@ -1,13 +1,9 @@
 import React, {useState} from "react";
 
 
-const ImgBox=({classN,color,number,imgChange})=>{
-    console.log("d");
-    const imgChangeFunc=()=>{
-        console.log();
-        imgChange(img);
+const ImgBox=({classN,color,number,imgChange,colorChange})=>{
 
-    }
+    const imgChangeFunc=(img)=>{imgChange(img);}
 
     let imgsrc=[];
     for(var i=0; i<Number(number);i++){
@@ -18,8 +14,8 @@ const ImgBox=({classN,color,number,imgChange})=>{
     return(
         <div className={classN} >
             {
-                imgsrc.map(index,img=>(
-                    <img key={index} src={srcO+img+srcE} onClick={imgChangeFunc}/>
+                imgsrc.map(img=>(
+                    <img key={img} src={srcO+img+srcE} onClick={()=>{imgChangeFunc(img)}}/>
                 ))
             }
         </div>
