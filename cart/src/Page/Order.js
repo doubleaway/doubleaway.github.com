@@ -12,24 +12,18 @@ const Order=()=>{
     const [allCount,setAllCount]=useState(0);
     const [calc,setCalc]=useState(0);
 
-    const colors=['black','gray','red'];
     // img
     const [img,setImg]=useState("1");
     const imgChange=(img)=>{setImg(img);}
 
     //color
+    const colors=['black','gray','red'];
     const [colorCh,setColorCh]=useState("black");
     const colorChange=useCallback((color)=>{setColorCh(color);},[colorCh]);
-
-    
-
-
 
     if(allCount>5){setAllCount(5);}
     
     const price=26000;
-
-
 
     // 카운트
     const onIncrease=(count)=>{setCount(count);}
@@ -84,9 +78,7 @@ return(
                <hr/>
                <div className="color_change_button_box">
                    <h3>Color</h3>
-                   {/*<Button color="red" contents="" classN="color_change" onClick={colorChange} colorCh={colorCh}/>*/}
-                   {/*<Button color="gray" contents="" classN="color_change"onClick={colorChange} colorCh={colorCh}/>*/}
-                   {/*<Button color="black" contents="" classN="color_change" onClick={colorChange} colorCh={colorCh}/>*/}
+
                    <ul>
                        {colors.map(color=>(<li className={"btn_color_change back_"+color} key={color} onClick={()=>{colorChange(color)}}></li>))}
                    </ul>
@@ -104,7 +96,6 @@ return(
                <hr/>
                <div className="result_box">
                    <p><span>총 </span>{allCount}개</p>
-                  
                   <p> <span className="axent">{calc}</span><span>원</span></p>
                </div>
            </div>
