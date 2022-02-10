@@ -1,5 +1,5 @@
 
-
+const price=26000;
 
 
 //초기 data
@@ -9,27 +9,11 @@ const data=[
 
             color:"Gray",
             size:'M',
-            price:26000,
+            price:price,
             amount:0,
 
         },
 
-        {id:2,
-  
-            color:"Black",
-            size:'S',
-            price:26000,
-            amount:0,
-
-        },
-        {id:3,
- 
-            color:"Red",
-            size:'XL',
-            price:26000,
-            amount:0,
-
-        },
 
     ]
 
@@ -42,11 +26,10 @@ const COLOR='cart/COLOR';//color 변경
 
 let id=0;//add될때마다 1씩 추가
 
-export const add=(memo,title,)=>({
+export const add=(content,title,)=>({
     type:ADD,
     memo:{
         id:id++,
-        title:title,
         content:memo,
         importance:false,
     }

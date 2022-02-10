@@ -22,7 +22,6 @@ const Order=()=>{
     const colorChange=useCallback((color)=>{setColorCh(color);},[colorCh]);
 
     if(allCount>5){setAllCount(5);}
-    
     const price=26000;
 
     // 카운트
@@ -40,9 +39,13 @@ const Order=()=>{
     }
     const onDecrese=(count)=>{setCount(count);}
     // select box
-    const size=["사이즈를 선택해주세요",'M',"S","XL","XS","L"];
-    const color=["색상을 선택해주세요","Gray","Black","Red"];
-
+    const size=['M',"S","XL","XS","L"];
+    const color=["Gray","Black","Red"];
+    const [colorSelected,setColorSetSelected]=useState('');
+    const [sizeSelected,setSizeSetSelected]=useState('');
+    const onSelect=(e)=>{
+        setSizeSetSelected(e.target.value);
+    }
 
 return(
     <section >
@@ -85,8 +88,14 @@ return(
                </div>
            </div>
            <div className="select_box">
-                    <SelectBox select={size}/>
-                    <SelectBox select={color}/>
+                <select  value={sizeSelected} onChange={onSelect}>
+                        <option value=''>사이즈를 선택해주세요</option>
+                     {size.map(select=><option value={select} key={select}>{select}</option>)}
+               </select>
+               <select  value={colorSelected}  onChange={onSelect} disabled={sizeSelected==''?true:false}>
+                   <option value=''>색상을 선택해주세요</option>
+                   {color.map(select=><option key={select} value={select}>{select}</option>)}
+               </select>
                <hr/>
                <p>최대 구매 수량 5개</p>
                <hr/>
@@ -97,6 +106,9 @@ return(
                <div className="result_box">
                    <p><span>총 </span>{allCount}개</p>
                   <p> <span className="axent">{calc}</span><span>원</span></p>
+               </div>
+               <div className="button_box">
+                   <button>구입하기</button>
                </div>
            </div>
         </div>

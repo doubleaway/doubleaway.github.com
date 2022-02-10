@@ -163,5 +163,13 @@ header{
         }
 
     }
+
+    .button_box{
+      @include size(100%,60px);
+      margin-top:15px;
+      button{
+        @include size(100%,100%);
+      }
+    }
   }
 }
