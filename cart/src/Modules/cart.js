@@ -6,18 +6,11 @@ const price=26000;
 const data=[
 
         {id:0,
-
             color:"Gray",
             size:'M',
             price:price,
-            amount:0,
-
         },
-
-
     ]
-
-
 
 const ADD='cart/ADD';//추가함
 const REMOVE='cart/REMOVE';//삭제
@@ -26,12 +19,12 @@ const COLOR='cart/COLOR';//color 변경
 
 let id=0;//add될때마다 1씩 추가
 
-export const add=(content,title,)=>({
+export const add=(color,size)=>({
     type:ADD,
-    memo:{
+    data:{
         id:id++,
-        content:memo,
-        importance:false,
+        color:color,
+        size:size,
     }
 });
 export const quantity=(id)=>({
@@ -56,7 +49,7 @@ export default function cart(state=data,action){
         case ADD:
             return{
                 ...state,
-                data_con: state.data_con.concat(action.memo),
+                data_con: state.data_con.concat(action.data),
             };
         case QUANTITY:
             return {

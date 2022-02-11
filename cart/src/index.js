@@ -8,6 +8,7 @@ import Order from "./Page/Order";
 import rootReducer from "./Modules";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
+import ListContainer from "./Conatiners/ListContainer";
 //import {composeWithDevTools} from "redux-devtools-extension";//
 
 const store=createStore(rootReducer);
@@ -15,7 +16,7 @@ const store=createStore(rootReducer);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Order />
+      <ListContainer />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

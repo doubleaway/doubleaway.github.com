@@ -2,12 +2,13 @@ import React, {useCallback, useState} from "react";
 // import ImgBox from "../Components/ImgBox";
 import Button from "../Components/button";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import ListContainer from "../Conatiners/ListContainer";
+// import ListContainer from "../Conatiners/ListContainer";
 import ImgBox from "../Components/ImgBox";
 import SelectBox from "../Components/SelectBox";
+import List from "../Components/List";
 
 
-const Order=()=>{
+const Order=({data,onAdd})=>{
     const [count,setCount]=useState(0);
     const [allCount,setAllCount]=useState(0);
     const [calc,setCalc]=useState(0);
@@ -23,7 +24,7 @@ const Order=()=>{
 
     if(allCount>5){setAllCount(5);}
     const price=26000;
-
+    console.log(data);
     // 카운트
     const onIncrease=(count)=>{setCount(count);}
     const allCountFunc=(allCount)=>{
@@ -38,6 +39,9 @@ const Order=()=>{
     
     }
     const onDecrese=(count)=>{setCount(count);}
+
+
+
     // select box
     const size=['M',"S","XL","XS","L"];
     const color=["Gray","Black","Red"];
@@ -45,6 +49,11 @@ const Order=()=>{
     const [sizeSelected,setSizeSetSelected]=useState('');
     const onSelect=(e)=>{
         setSizeSetSelected(e.target.value);
+    }
+    const onColorSelect=(e)=>{
+        setColorSetSelected(e.target.value);
+        setSizeSetSelected('');
+        onAdd(colorSelected);
     }
 
 return(
@@ -92,7 +101,7 @@ return(
                         <option value=''>사이즈를 선택해주세요</option>
                      {size.map(select=><option value={select} key={select}>{select}</option>)}
                </select>
-               <select  value={colorSelected}  onChange={onSelect} disabled={sizeSelected==''?true:false}>
+               <select  value={colorSelected}  onChange={onColorSelect} disabled={sizeSelected==''?true:false}>
                    <option value=''>색상을 선택해주세요</option>
                    {color.map(select=><option key={select} value={select}>{select}</option>)}
                </select>
@@ -100,7 +109,7 @@ return(
                <p>최대 구매 수량 5개</p>
                <hr/>
                <div>
-                   <ListContainer count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} />
+                   <List count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} data={data} />
                </div>
                <hr/>
                <div className="result_box">
