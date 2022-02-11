@@ -5,11 +5,6 @@ const price=26000;
 //초기 data
 const data=[
 
-        {id:0,
-            color:"Gray",
-            size:'M',
-            price:price,
-        },
     ]
 
 const ADD='cart/ADD';//추가함
@@ -19,12 +14,12 @@ const COLOR='cart/COLOR';//color 변경
 
 let id=0;//add될때마다 1씩 추가
 
-export const add=(color,size)=>({
+export const add=(size,color)=>({
     type:ADD,
     data:{
         id:id++,
-        color:color,
         size:size,
+        color:color
     }
 });
 export const quantity=(id)=>({
@@ -47,10 +42,8 @@ export default function cart(state=data,action){
 
     switch (action.type){
         case ADD:
-            return{
-                ...state,
-                data_con: state.data_con.concat(action.data),
-            };
+            return state.concat(action.data)
+
         case QUANTITY:
             return {
                 data_con:state.data_con.map( memo => memo.id === action.id ? {...memo, active: !memo.active} : memo)

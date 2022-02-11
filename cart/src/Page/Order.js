@@ -52,8 +52,10 @@ const Order=({data,onAdd})=>{
     }
     const onColorSelect=(e)=>{
         setColorSetSelected(e.target.value);
-        setSizeSetSelected('');
-        onAdd(colorSelected);
+
+        if(colorSelected!='')
+            onAdd(sizeSelected,colorSelected);
+            setSizeSetSelected('');
     }
 
 return(
