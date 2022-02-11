@@ -8,7 +8,7 @@ import SelectBox from "../Components/SelectBox";
 import List from "../Components/List";
 
 
-const Order=({data,onAdd})=>{
+const Order=({data,onAdd,onDelete})=>{
     const [count,setCount]=useState(0);
     const [allCount,setAllCount]=useState(0);
     const [calc,setCalc]=useState(0);
@@ -45,17 +45,20 @@ const Order=({data,onAdd})=>{
     // select box
     const size=['M',"S","XL","XS","L"];
     const color=["Gray","Black","Red"];
-    const [colorSelected,setColorSetSelected]=useState('');
-    const [sizeSelected,setSizeSetSelected]=useState('');
+    const [colorSelected,setColorSetSelected]=useState('Gray');
+    const [sizeSelected,setSizeSetSelected]=useState('M');
     const onSelect=(e)=>{
+
         setSizeSetSelected(e.target.value);
     }
     const onColorSelect=(e)=>{
         setColorSetSelected(e.target.value);
 
-        if(colorSelected!='')
-            onAdd(sizeSelected,colorSelected);
+        if(colorSelected!='') {
+            onAdd(sizeSelected, colorSelected);
             setSizeSetSelected('');
+        }
+
     }
 
 return(
@@ -111,7 +114,7 @@ return(
                <p>최대 구매 수량 5개</p>
                <hr/>
                <div>
-                   <List count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} data={data} />
+                   <List count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} data={data} onDelete={onDelete}/>
                </div>
                <hr/>
                <div className="result_box">

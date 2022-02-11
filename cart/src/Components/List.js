@@ -1,23 +1,24 @@
 import react,{useState} from  "react";
 
 
-const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc})=>{
+const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,onDelete})=>{
+
     return (
     <>
      
          {  data.map(
-                data=>(<ListItem data={data} count={count} onDecrese={onDecrese} onIncrease={onIncrease} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc}/>)
+                data=>(<ListItem data={data} id={data.id}count={count} onDecrese={onDecrese} onIncrease={onIncrease} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} onDelete={onDelete}/>)
             )
         }
     </>
     )
 }
 
-const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc})=>{
+const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,onDelete,id})=>{
     const [test,setTest]=useState(0);
     const {color,size}=data;
 
-
+    console.log(id)
     
     const onClick=()=>{
         if(allCount<=0||test<=0){}
@@ -37,7 +38,11 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
         }
 
     }
-   
+    const onRemove=()=>{
+        onDelete(id);
+        console.log(id)
+    }
+
     return   (
        
          <div className="list_item">
@@ -48,7 +53,7 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
                 <span className="count_box">{test}</span>
                 <span onClick={increase}>+</span>
             </div>
-            <span className="close_btn">x</span>
+            <span className="close_btn" onClick={onRemove}>x</span>
         </div>
     )
 }

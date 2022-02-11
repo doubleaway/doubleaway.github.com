@@ -14,6 +14,8 @@ const COLOR='cart/COLOR';//color 변경
 
 let id=0;//add될때마다 1씩 추가
 
+
+
 export const add=(size,color)=>({
     type:ADD,
     data:{
@@ -54,11 +56,7 @@ export default function cart(state=data,action){
               ...state
           }
         case REMOVE:
-            return {
-                ...state,
-                data_con: state.data_con.filter(memo=>memo.id!==action.id)
-
-            };
+                return state.filter(memo=>memo.id!==action.id)
 
 
 
