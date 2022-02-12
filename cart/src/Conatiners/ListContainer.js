@@ -1,7 +1,7 @@
 import React, {useCallback} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import List from "../Components/List";
-import {add,remove} from "../Modules/cart";
+import {add,remove,counter} from "../Modules/cart";
 import Order from "../Page/Order";
 
 
@@ -10,11 +10,13 @@ const ListContainer=()=>{
     const dispatch=useDispatch();
     const onAdd=useCallback((size,color)=>dispatch(add(size,color)),[dispatch]);
     const onDelete=useCallback((id)=>dispatch(remove(id)),[dispatch]);
+    const onCounter=useCallback((id,counter)=>dispatch(counter(id,counter)),[dispatch]);
+    
     // const onAdd=(size,color)=>dispatch(size,color);
     //const id=selectCont.id;
     return(
         // <List data={selectCont} count={count} onDecrese={onDecrese} onIncrease={onIncrease} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc}  />
-        <Order data={selectCont} onAdd={onAdd} onDelete={onDelete}/>
+        <Order data={selectCont} onAdd={onAdd} onDelete={onDelete} onCounter={onCounter}/>
     )
 }
 

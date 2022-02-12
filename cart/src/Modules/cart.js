@@ -16,21 +16,24 @@ let id=0;//add될때마다 1씩 추가
 
 
 
-export const add=(size,color)=>({
+export const add=(size,color,count)=>({
     type:ADD,
     data:{
         id:id++,
         size:size,
-        color:color
+        color:color,
+        counter:1,
     }
 });
-export const quantity=(id)=>({
+export const counter=(id,counter)=>({
     type:QUANTITY,
-    id
+    id,
+    counter:counter
 });
 export const remove=(id)=>({
     type:REMOVE,
     id
+
 });
 
 export const colorChange=(color)=>({
@@ -48,13 +51,12 @@ export default function cart(state=data,action){
 
         case QUANTITY:
             return {
-                data_con:state.data_con.map( memo => memo.id === action.id ? {...memo, active: !memo.active} : memo)
+                // counter:state.map( memo => memo.id === action.id ? {...memo, counter: counter} : memo)
+                ...state
+
             }
 
-        case COLOR:
-          return{
-              ...state
-          }
+
         case REMOVE:
                 return state.filter(memo=>memo.id!==action.id)
 

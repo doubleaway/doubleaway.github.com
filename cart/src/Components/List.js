@@ -14,11 +14,11 @@ const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFun
     )
 }
 
-const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,onDelete,id})=>{
+const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,onDelete,id,onCounter})=>{
     const [test,setTest]=useState(0);
     const {color,size}=data;
 
-    console.log(id)
+    console.log(onCounter);
     
     const onClick=()=>{
         if(allCount<=0||test<=0){}
@@ -27,6 +27,7 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
         alldeCountFunc(allCount-1);
         setTest(test-1);
         onDecrese(test);
+        onCounter(id,test);
         }
 
     }
@@ -35,6 +36,7 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
             allCountFunc(allCount+1);
             setTest(test+1)
             onIncrease(test);
+            // onCounter(id,test);
         }
 
     }

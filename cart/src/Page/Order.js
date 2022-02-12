@@ -8,7 +8,8 @@ import SelectBox from "../Components/SelectBox";
 import List from "../Components/List";
 
 
-const Order=({data,onAdd,onDelete})=>{
+const Order=({data,onAdd,onDelete,onCounter})=>{
+    // count,calc
     const [count,setCount]=useState(0);
     const [allCount,setAllCount]=useState(0);
     const [calc,setCalc]=useState(0);
@@ -43,24 +44,25 @@ const Order=({data,onAdd,onDelete})=>{
 
 
     // select box
+    const sizeSentense='사이즈를 선택해주세요';
+    const colorSentense='색상을 선택해주세요';
     const size=['M',"S","XL","XS","L"];
     const color=["Gray","Black","Red"];
-    const [colorSelected,setColorSetSelected]=useState('Gray');
-    const [sizeSelected,setSizeSetSelected]=useState('M');
+    const [colorSelected,setColorSetSelected]=useState(colorSentense);
+    const [sizeSelected,setSizeSetSelected]=useState(sizeSentense);
     const onSelect=(e)=>{
-
         setSizeSetSelected(e.target.value);
     }
     const onColorSelect=(e)=>{
+        e.preventDefault();
         setColorSetSelected(e.target.value);
-
-        if(colorSelected!='') {
-            onAdd(sizeSelected, colorSelected);
-            setSizeSetSelected('');
-        }
-
+        console.log(colorSelected);
+        if(colorSelected!==colorSentense)
+            onAdd(sizeSelected, colorSelected,count);
+           
+        
     }
-
+console.log(onCounter);
 return(
     <section >
         <header>
@@ -106,15 +108,15 @@ return(
                         <option value=''>사이즈를 선택해주세요</option>
                      {size.map(select=><option value={select} key={select}>{select}</option>)}
                </select>
-               <select  value={colorSelected}  onChange={onColorSelect} disabled={sizeSelected==''?true:false}>
+               <select  value={colorSelected}  onChange={onColorSelect} >
                    <option value=''>색상을 선택해주세요</option>
-                   {color.map(select=><option key={select} value={select}>{select}</option>)}
+                   {color.map(select=><option  value={select} key={select}>{select}</option>)}
                </select>
                <hr/>
                <p>최대 구매 수량 5개</p>
                <hr/>
                <div>
-                   <List count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} data={data} onDelete={onDelete}/>
+                   <List count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} data={data} onDelete={onDelete} onCounter={onCounter}/>
                </div>
                <hr/>
                <div className="result_box">
