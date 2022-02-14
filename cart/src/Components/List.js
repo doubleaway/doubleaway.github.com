@@ -27,7 +27,7 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
         alldeCountFunc(allCount-1);
         setTest(test-1);
         onDecrese(test);
-        onCounter(id,test);
+
         }
 
     }
@@ -36,13 +36,13 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
             allCountFunc(allCount+1);
             setTest(test+1)
             onIncrease(test);
-            // onCounter(id,test);
+
         }
 
     }
     const onRemove=()=>{
         onDelete(id);
-        console.log(id)
+
     }
 
     return   (

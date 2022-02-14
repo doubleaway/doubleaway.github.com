@@ -28,7 +28,9 @@ export const add=(size,color,count)=>({
 export const counter=(id,counter)=>({
     type:QUANTITY,
     id,
-    counter:counter
+    data: {
+        counter: counter
+    }
 });
 export const remove=(id)=>({
     type:REMOVE,
@@ -51,9 +53,8 @@ export default function cart(state=data,action){
 
         case QUANTITY:
             return {
-                // counter:state.map( memo => memo.id === action.id ? {...memo, counter: counter} : memo)
-                ...state
-
+                ...state,
+                 counter:state.map( count => count.id === action.id ? {...count, counter: counter} : count)
             }
 
 

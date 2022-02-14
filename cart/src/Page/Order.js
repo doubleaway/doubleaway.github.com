@@ -56,13 +56,12 @@ const Order=({data,onAdd,onDelete,onCounter})=>{
     const onColorSelect=(e)=>{
         e.preventDefault();
         setColorSetSelected(e.target.value);
-        console.log(colorSelected);
         if(colorSelected!==colorSentense)
             onAdd(sizeSelected, colorSelected,count);
            
         
     }
-console.log(onCounter);
+
 return(
     <section >
         <header>
