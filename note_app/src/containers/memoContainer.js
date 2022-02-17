@@ -2,7 +2,7 @@ import React, {useCallback} from "react";
 import {connect, useDispatch, useSelector} from "react-redux";
 import{add,inputChange,toggle,remove} from "../modules/notes";
 import MemoContents from "../component/features/MemoContent";
-const NotesContainer=()=>{
+const NotesContainer=({saveFunc,visible})=>{
 
     const memoCon=useSelector(state=>state.data_con);
     const inputs=useSelector(state=>state.input);
@@ -22,6 +22,8 @@ const NotesContainer=()=>{
         onRemove={onRemove}
         inputChange={inputChange}
         inputs={inputs}
+        saveFunc={saveFunc}
+        visible={visible}
         />
     );
 }

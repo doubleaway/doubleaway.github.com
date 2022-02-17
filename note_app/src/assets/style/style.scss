@@ -202,6 +202,8 @@
     }
     .memo_content_box{
       padding:15px 3.5%;
+      border:1px solid $color_light_gray;
+      border-radius:5px;
       padding:{
         bottom:30px;
         top: 15px;
@@ -224,7 +226,6 @@
       top:15px;
     }
     border-radius: 10px;
-    border:1px solid #eee;
     input[type='checkbox']{
       border: 1px solid $color_gray;
      box-shadow: 2px 2px 2px $main_color;

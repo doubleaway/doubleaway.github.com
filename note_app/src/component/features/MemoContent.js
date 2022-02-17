@@ -5,7 +5,7 @@ import moment from 'moment';
 import 'moment/locale/ko';
 import Button from "../button";
 
-function MemoContents({memoCon,onAdd,onToggle,inputChange,input}){
+function MemoContents({memoCon,onAdd,onToggle,inputChange,input,visible,saveFunc}){
 
     const nowTime = moment().format('YYYY.MM.DD');
     const [memo,setMemo]=useState('');
@@ -40,7 +40,8 @@ function MemoContents({memoCon,onAdd,onToggle,inputChange,input}){
                                   value={memo}
                                   onChange={onChange}
                         />
-                        <Button type="submit" contents={<IoIosCreate size={30}/>} color="light_gray" classN="edit" contentsText="저장"></Button>
+                        {/* <Button type="submit" contents={<IoIosCreate size={30}/>} color="light_gray" classN="edit" contentsText="저장"></Button> */}
+                        <button type="submit" className="btn_edit"><IoIosCreate size={30}/>저장</button>
                     </form>
 
                 </div>

@@ -24,6 +24,7 @@ button {
 }
 
 svg {
-  vertical-align: top;
+  vertical-align: middle;
+  margin-top: -4px;
 }
 /*# sourceMappingURL=reset.css.map */

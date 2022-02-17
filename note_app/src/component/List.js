@@ -1,5 +1,5 @@
 import React, {useState, useReducer, useCallback} from "react";
-import {IoIosPricetag, IoIosStar} from "react-icons/io";
+import {IoIosPricetag, IoIosStar,IoMdTrash} from "react-icons/io";
 // import MemoBox from "./MemoBox";
 
 
@@ -27,6 +27,7 @@ return(
         <div className="label_box">
             {/*{label}*/}
             <IoIosPricetag/>label
+            <span onClick={()=>{onRemove(id)}}><IoMdTrash/></span>
         </div>
         <div className="memo_content_box">
             <div className="title_box">
