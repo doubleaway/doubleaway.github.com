@@ -1,6 +1,8 @@
 import React, {useState, useReducer, useCallback} from "react";
 import {IoIosPricetag, IoIosStar,IoMdTrash} from "react-icons/io";
 // import MemoBox from "./MemoBox";
+import moment from 'moment';
+import 'moment/locale/ko';
 
 
 function List({memoCon,onToggle,onRemove}){
@@ -22,6 +24,7 @@ function MemoCon({memoCon,onToggle,onRemove}){
 const {title,content,date,active,id}=memoCon;
 const [text,setText]=useState();
 
+const nowTime = moment().format('YYYY.MM.DD');
 return(
     <div className="memo_box">
         <div className="label_box">
@@ -38,7 +41,7 @@ return(
             </div>
 
             <div className="content_txt">{content}</div>
-            <div className="color_gray">{date}</div>
+            <div className="color_gray">{nowTime}</div>
         </div>
     </div>
 )
