@@ -7,7 +7,6 @@ import Button from "../button";
 
 function MemoContents({memoCon,onAdd,onToggle,inputChange,input,visible,saveFunc}){
 
-    const nowTime = moment().format('YYYY.MM.DD');
     const [memo,setMemo]=useState('');
     const onChange=e=>{
         e.preventDefault();
@@ -17,17 +16,18 @@ function MemoContents({memoCon,onAdd,onToggle,inputChange,input,visible,saveFunc
 
         onAdd(memo);
         setMemo('');//등록후 초기화
+        saveFunc(false);
         e.preventDefault();
     }
 
-    console.log(nowTime);
+    // console.log(nowTime);
     return (
         <div className="inputs_box">
             <div className="memo_box">
                 <div className="title_box">
                     <h1 className="content_title"></h1>
                     <p>
-                        <IoIosStar size={20}/>
+                        {/* <IoIosStar size={20}/> */}
                     </p>
                 </div>
 
@@ -45,7 +45,7 @@ function MemoContents({memoCon,onAdd,onToggle,inputChange,input,visible,saveFunc
                     </form>
 
                 </div>
-                <div className="color_gray">{nowTime}</div>
+                <div className="color_gray"></div>
             </div>
         </div>
     )

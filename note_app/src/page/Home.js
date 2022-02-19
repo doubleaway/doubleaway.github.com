@@ -10,10 +10,11 @@ import NotesContainer from "../containers/memoContainer";
 import ListContainer from "../containers/ListContainer";
 const Home=()=>{
 const [post,SetPost]=useState(true);
-const [visible,setVisible]=useState(false);
+const [visible,setVisible]=useState(true);
 const saveFunc=(visible)=>{
     setVisible(visible);
 }
+console.log(visible);
 const onClose=()=>{
 
 }
@@ -23,7 +24,7 @@ return(
             <Nav/>
         </div>
         <div className="edit_bar_box">
-            <EditBar saveFunc={saveFunc} visible={visible} />
+            <EditBar saveFunc={saveFunc} visible={visible}/>
         </div>
         <div className="home_content">
 
@@ -33,7 +34,7 @@ return(
         {/*알림창*/}
         {/*<Notification/>*/}
         {/*글쓰기*/}
-        {/*<NotesContainer/>*/}
+        {/* {visible?<NotesContainer/>:''} */}
     </section>
 
 )
