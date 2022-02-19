@@ -136,7 +136,7 @@ html, body {
 
 .main_con_box .main_con > div {
   margin-top: 30px;
-  padding-bottom: 70px;
+  padding-bottom: 20px;
 }
 
 .main_con_box .main_con p {
@@ -534,7 +534,7 @@ footer p i {
     font-size: 3rem;
   }
   .main_con_box .main_con > div {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 0;
   }
   .main_con_box .main_con p {
