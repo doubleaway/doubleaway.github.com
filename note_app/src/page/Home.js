@@ -10,11 +10,11 @@ import NotesContainer from "../containers/memoContainer";
 import ListContainer from "../containers/ListContainer";
 const Home=()=>{
 const [post,SetPost]=useState(true);
-const [visible,setVisible]=useState(true);
+const [visible,setVisible]=useState(false);
 const saveFunc=(visible)=>{
     setVisible(visible);
 }
-console.log(visible);
+
 const onClose=()=>{
 
 }
