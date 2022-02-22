@@ -8,9 +8,9 @@ import SelectBox from "../Components/SelectBox";
 import List from "../Components/List";
 
 
-const Order=({data,onAdd,onDelete,onCounter})=>{
-
-    console.log(data);
+const Order=({onAdd})=>{
+    // 화면 출력용 데이타
+    const [listData,setListData]=useState({})
     // count,calc
     const [count,setCount]=useState(0);
     const [allCount,setAllCount]=useState(0);
@@ -27,12 +27,9 @@ const Order=({data,onAdd,onDelete,onCounter})=>{
 
     if(allCount>5){setAllCount(5);}
     const price=26000;
-    console.log(data);
     // 카운트
     const onIncrease=(count)=>{
         setCount(count);
-        console.log(count); 
-
     }
     const allCountFunc=(allCount)=>{
         setAllCount(allCount);
@@ -46,9 +43,7 @@ const Order=({data,onAdd,onDelete,onCounter})=>{
     const onDecrese=(count)=>{setCount(count);}
 
 
-    const OnCounterFunc=(id,counter)=>{
-        onCounter(id,counter);
-    }
+    // const OnCounterFunc=(id,counter)=>{onCounter(id,counter);}
     // select box
     const sizeSentense='사이즈를 선택해주세요';
     const colorSentense='색상을 선택해주세요';
@@ -64,8 +59,6 @@ const Order=({data,onAdd,onDelete,onCounter})=>{
         setColorSetSelected(e.target.value);
         if(colorSelected!==colorSentense)
             onAdd(sizeSelected, colorSelected,count);
-           
-        
     }
 
 return(
@@ -121,7 +114,7 @@ return(
                <p>최대 구매 수량 5개</p>
                <hr/>
                <div>
-                   <List count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} data={data} onDelete={onDelete} OnCounterFunc={OnCounterFunc}/>
+                   <List count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} data={data} />
                </div>
                <hr/>
                <div className="result_box">
@@ -129,7 +122,7 @@ return(
                   <p> <span className="axent">{calc}</span><span>원</span></p>
                </div>
                <div className="button_box">
-                   <button>구입하기</button>
+                   <button onClick={console.log()}>구입하기</button>
                </div>
            </div>
         </div>
