@@ -1,24 +1,23 @@
 import react,{useState} from  "react";
 
 
-const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,onDelete})=>{
+const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,onDelete,OnCounterFunc})=>{
 
     return (
     <>
      
          {  data.map(
-                data=>(<ListItem data={data} id={data.id}count={count} onDecrese={onDecrese} onIncrease={onIncrease} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} onDelete={onDelete}/>)
+                data=>(<ListItem data={data} id={data.id}count={count} onDecrese={onDecrese} onIncrease={onIncrease} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} onDelete={onDelete} OnCounterFunc={OnCounterFunc}/>)
             )
         }
     </>
     )
 }
 
-const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,onDelete,id,onCounter})=>{
+const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,onDelete,id,OnCounterFunc})=>{
     const [test,setTest]=useState(0);
     const {color,size}=data;
 
-    console.log(onCounter);
     
     const onClick=()=>{
         if(allCount<=0||test<=0){}
@@ -36,6 +35,7 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
             allCountFunc(allCount+1);
             setTest(test+1)
             onIncrease(test);
+            OnCounterFunc(id,test);
 
         }
 

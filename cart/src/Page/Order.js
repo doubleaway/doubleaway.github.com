@@ -9,6 +9,8 @@ import List from "../Components/List";
 
 
 const Order=({data,onAdd,onDelete,onCounter})=>{
+
+    console.log(data);
     // count,calc
     const [count,setCount]=useState(0);
     const [allCount,setAllCount]=useState(0);
@@ -27,12 +29,14 @@ const Order=({data,onAdd,onDelete,onCounter})=>{
     const price=26000;
     console.log(data);
     // 카운트
-    const onIncrease=(count)=>{setCount(count);}
-    const allCountFunc=(allCount)=>{
+    const onIncrease=(count)=>{
+        setCount(count);
+        console.log(count); 
 
+    }
+    const allCountFunc=(allCount)=>{
         setAllCount(allCount);
         setCalc((Number(price)*(allCount)));
-
     }
     const alldeCountFunc=(allCount)=>{
         setAllCount(allCount);
@@ -42,7 +46,9 @@ const Order=({data,onAdd,onDelete,onCounter})=>{
     const onDecrese=(count)=>{setCount(count);}
 
 
-
+    const OnCounterFunc=(id,counter)=>{
+        onCounter(id,counter);
+    }
     // select box
     const sizeSentense='사이즈를 선택해주세요';
     const colorSentense='색상을 선택해주세요';
@@ -115,7 +121,7 @@ return(
                <p>최대 구매 수량 5개</p>
                <hr/>
                <div>
-                   <List count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} data={data} onDelete={onDelete} onCounter={onCounter}/>
+                   <List count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} data={data} onDelete={onDelete} OnCounterFunc={OnCounterFunc}/>
                </div>
                <hr/>
                <div className="result_box">
