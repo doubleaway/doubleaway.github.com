@@ -7,7 +7,7 @@ const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFun
     <>
      
          {  data.map(
-                data=>(<ListItem data={data} id={data.id}count={count} onDecrese={onDecrese} onIncrease={onIncrease} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} onDelete={onDelete} OnCounterFunc={OnCounterFunc}/>)
+                data=>(data.id!=0?<ListItem data={data} id={data.id}count={count} onDecrese={onDecrese} onIncrease={onIncrease} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} onDelete={onDelete} OnCounterFunc={OnCounterFunc}/>:'')
             )
         }
     </>
@@ -35,7 +35,7 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
             allCountFunc(allCount+1);
             setTest(test+1)
             onIncrease(test);
-            OnCounterFunc(id,test);
+            OnCounterFunc(id,test+1);
 
         }
 

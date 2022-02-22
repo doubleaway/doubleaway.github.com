@@ -9,8 +9,14 @@ import List from "../Components/List";
 
 
 const Order=({onAdd})=>{
-    // 화면 출력용 데이타
-    const [listData,setListData]=useState({})
+    // 화면 출력용 데이터
+    const [listData,setListData]=useState([{
+        id:0,
+        count:'',
+        size:'',
+        color:''
+    }]);
+    let id=0;
     // count,calc
     const [count,setCount]=useState(0);
     const [allCount,setAllCount]=useState(0);
@@ -42,7 +48,6 @@ const Order=({onAdd})=>{
     }
     const onDecrese=(count)=>{setCount(count);}
 
-
     // const OnCounterFunc=(id,counter)=>{onCounter(id,counter);}
     // select box
     const sizeSentense='사이즈를 선택해주세요';
@@ -58,8 +63,28 @@ const Order=({onAdd})=>{
         e.preventDefault();
         setColorSetSelected(e.target.value);
         if(colorSelected!==colorSentense)
-            onAdd(sizeSelected, colorSelected,count);
+            addOrder(count); 
+            // onAdd(sizeSelected, colorSelected,count);
+           
     }
+
+    //출력용 리스트 변경
+    //추가
+    const addOrder=(count)=>{
+        id+=1;
+        const listDataAdd={
+            id:id++,
+            counter:count,
+            color:colorSelected,
+            size: sizeSelected
+        };
+        setListData(listData.concat(listDataAdd));
+    }
+    //삭제
+    const deleteOrder=(id)=>{
+        listData.filter(list=>list.id!==id);
+    }
+    console.log(listData)
 
 return(
     <section >
@@ -114,7 +139,7 @@ return(
                <p>최대 구매 수량 5개</p>
                <hr/>
                <div>
-                   <List count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} data={data} />
+                   <List data={listData} count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} />
                </div>
                <hr/>
                <div className="result_box">
