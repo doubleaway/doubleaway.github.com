@@ -21,14 +21,14 @@ export const add=(size,color)=>({
         id:id++,
         size:size,
         color:color,
-        counter:'1',
+        counter:1,
     }
     ,
 });
 export const counterChange=(id,counter)=>({
     type:QUANTITY,
     id,
-    counter
+    counter:counter
 });
 export const remove=(id)=>({
     type:REMOVE,
