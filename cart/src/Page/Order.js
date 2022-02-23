@@ -16,6 +16,9 @@ const Order=({onAdd})=>{
         size:'',
         color:''
     }]);
+
+
+
     var [listId,setListId]=useState(1);
     // count,calc
     const [count,setCount]=useState(0);
@@ -68,6 +71,7 @@ const Order=({onAdd})=>{
            
     }
 
+
     //출력용 리스트 변경
     //추가
     const addOrder=(count)=>{
@@ -86,6 +90,12 @@ const Order=({onAdd})=>{
         setListData(listData.filter(list=>list.id!==id));
     }
 
+
+        
+    // 실제장바구니 값 
+    const cartListAdd=()=>{
+        onAdd(listData);
+    }
 
 return(
     <section >
@@ -148,7 +158,7 @@ return(
                   <p> <span className="axent">{calc}</span><span>원</span></p>
                </div>
                <div className="button_box">
-                   <button onClick={console.log()}>구입하기</button>
+                   <button onClick={cartListAdd}>구입하기</button>
                </div>
            </div>
         </div>

@@ -2,9 +2,9 @@
 const price=26000;
 
 //초기 data
-const data=[
-
-    ]
+const data=[[{
+    
+}]]
 
 const ADD='cart/ADD';//추가함
 const REMOVE='cart/REMOVE';//삭제
@@ -15,16 +15,20 @@ let id=0;//add될때마다 1씩 추가
 
 
 
-export const add=(size,color)=>({
+// export const add=(id,size,color,counter)=>({
+//     type:ADD,
+//     data:{
+//         id:id,
+//         size:size,
+//         color:color,
+//         counter:counter,
+//     }
+//     ,
+// });
+export const add=(data)=>({
     type:ADD,
-    data:{
-        id:id++,
-        size:size,
-        color:color,
-        counter:1,
-    }
-    ,
-});
+    data
+})
 export const counterChange=(id,counter)=>({
     type:QUANTITY,
     id,
@@ -41,18 +45,19 @@ export const colorChange=(color)=>({
 });
 
 
-
-
 export default function cart(state=data,action){
 
     switch (action.type){
         case ADD:
+            
+console.log(state);
             return state.concat(action.data)
 
         case QUANTITY:
             console.log(action)
             return  state.map( memo => memo.id === action.id ? {...memo, counter: action.counter} : memo)
             // {
+                
                 // ...state,
                 //  counter:state.map( count => count.id === action.id ? {...count, counter: action.counter} : count)
                
