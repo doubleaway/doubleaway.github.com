@@ -1,20 +1,20 @@
 import react,{useState} from  "react";
 
 
-const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,onDelete,OnCounterFunc})=>{
+const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,deleteOrder,OnCounterFunc})=>{
 
     return (
     <>
      
          {  data.map(
-                data=>(data.id!=0?<ListItem data={data} id={data.id}count={count} onDecrese={onDecrese} onIncrease={onIncrease} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} onDelete={onDelete} OnCounterFunc={OnCounterFunc}/>:'')
+                data=>(data.id!=0?<ListItem data={data} id={data.id}count={count} onDecrese={onDecrese} onIncrease={onIncrease} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} deleteOrder={deleteOrder} OnCounterFunc={OnCounterFunc}/>:'')
             )
         }
     </>
     )
 }
 
-const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,onDelete,id,OnCounterFunc})=>{
+const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,deleteOrder,id,OnCounterFunc})=>{
     const [test,setTest]=useState(1);
     const {color,size}=data;
 
@@ -41,8 +41,7 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
 
     }
     const onRemove=()=>{
-        onDelete(id);
-
+        deleteOrder(id);
     }
 
     return   (

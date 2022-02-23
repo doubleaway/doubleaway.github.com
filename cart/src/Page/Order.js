@@ -16,7 +16,7 @@ const Order=({onAdd})=>{
         size:'',
         color:''
     }]);
-    let id=0;
+    var [listId,setListId]=useState(1);
     // count,calc
     const [count,setCount]=useState(0);
     const [allCount,setAllCount]=useState(0);
@@ -71,9 +71,10 @@ const Order=({onAdd})=>{
     //출력용 리스트 변경
     //추가
     const addOrder=(count)=>{
-        id+=1;
+    
+        setListId(listId=>listId+1);
         const listDataAdd={
-            id:id++,
+            id:listId,
             counter:count,
             color:colorSelected,
             size: sizeSelected
@@ -82,9 +83,9 @@ const Order=({onAdd})=>{
     }
     //삭제
     const deleteOrder=(id)=>{
-        listData.filter(list=>list.id!==id);
+        setListData(listData.filter(list=>list.id!==id));
     }
-    console.log(listData)
+
 
 return(
     <section >
@@ -139,7 +140,7 @@ return(
                <p>최대 구매 수량 5개</p>
                <hr/>
                <div>
-                   <List data={listData} count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} />
+                   <List data={listData} count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} deleteOrder={deleteOrder}/>
                </div>
                <hr/>
                <div className="result_box">
