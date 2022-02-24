@@ -1,7 +1,4 @@
 import React, {useState} from "react";
-import MenuBar from "../component/MenuBar";
-import ContentsListCard from "../component/ContentsListCard";
-import List from "../component/List";
 import Nav from "../component/Nav";
 import EditBar from "../component/EditBar";
 import Notification from "../component/Notification";

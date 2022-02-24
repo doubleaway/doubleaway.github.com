@@ -172,7 +172,7 @@ body, html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100px;
+  height: 115px;
   padding-top: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -224,6 +224,7 @@ body, html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #333;
+  border: 2px solid rgba(150, 0, 0, 0.3);
 }
 
 .edit_bar_box .edit_bar li span {
@@ -261,7 +262,7 @@ body, html {
   background-color: antiquewhite;
   border: 30px solid #EBB390;
   width: 60%;
-  height: 75vh;
+  height: 80vh;
   margin-left: 20%;
   -webkit-box-shadow: 5px 5px 5px #495057;
           box-shadow: 5px 5px 5px #495057;
@@ -287,7 +288,7 @@ body, html {
           box-sizing: border-box;
   background: #AADCF5;
   overflow: hidden;
-  margin-right: 17px;
+  margin-left: 17px;
   margin-top: 15px;
   border-radius: 2px;
   -webkit-box-shadow: 3px 3px 3px #495057;
