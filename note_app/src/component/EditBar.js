@@ -3,20 +3,18 @@ import { IoIosCreate,IoIosPricetag,IoIosTrash,IoMdSwap,IoIosSearch } from "react
 import Button from "./button";
 import NotesContainer from "../containers/memoContainer";
 import { GoPencil,GoTrashcan,GoStar } from "react-icons/go";
-function EditBar({saveFunc,visible}){
+function EditBar({saveFunc,visible,notificationVisibleFunc,resetNotification}){
 
-    // const [save,setSave]=useState(visible);
-    // const writeFunc=()=>{setSave(true)};
-    // console.log(visible);
     const onWrite=()=>{
         saveFunc(true);
+        resetNotification();
     }
 
     return(
         <>
             <ul className="edit_bar">
                 <li onClick={onWrite}><Button  contents={<GoPencil size={30}/>}  color="light_gray" classN="edit" contentsText="Write"></Button></li>
-                <li ><Button  contents={<GoTrashcan size={30}/>}  color="light_gray" classN="edit" contentsText="Delete all"></Button></li>
+                <li onClick={()=>notificationVisibleFunc(false)} ><Button  contents={<GoTrashcan size={30}/>}  color="light_gray" classN="edit" contentsText="Delete all"></Button></li>
                 <li ><Button  contents={<GoStar size={30}/>}  color="light_gray" classN="edit" contentsText="concern"></Button></li>
                 {/* <li><Button contents={<IoIosPricetag size={30}/>} color="light_gray" classN="edit" contentsText="태그"></Button></li>
                 <li><Button contents={<IoIosTrash size={30}/>} color="light_gray" classN="edit" contentsText="삭제"></Button></li>

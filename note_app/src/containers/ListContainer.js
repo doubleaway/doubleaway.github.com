@@ -3,7 +3,7 @@ import {connect, useDispatch, useSelector} from "react-redux";
 import {toggle,remove,concern} from "../modules/notes";
 import MemoContents from "../component/features/MemoContent";
 import List from "../component/List";
-const ListContainer=()=>{
+const ListContainer=({removeAll,removeAllFunc})=>{
     const dispatch=useDispatch();
     const onToggle=useCallback(id=>dispatch(toggle(id)),[dispatch]);
     const onRemove=useCallback(id=>dispatch(remove(id)),[dispatch]);
@@ -12,7 +12,7 @@ const ListContainer=()=>{
 
     return(
 
-      <List memoCon={memoCon} onToggle={onToggle} onRemove={onRemove} onConcern={onConcern}/>
+      <List memoCon={memoCon} onToggle={onToggle} onRemove={onRemove} removeAll={removeAll} removeAllFunc={removeAllFunc}/>
     );
 }
 

@@ -6,15 +6,27 @@ import MemoContents from "../component/features/MemoContent";
 import NotesContainer from "../containers/memoContainer";
 import ListContainer from "../containers/ListContainer";
 const Home=()=>{
-const [post,SetPost]=useState(true);
 const [visible,setVisible]=useState(false);
 const saveFunc=(visible)=>{
     setVisible(visible);
 }
+const [removeAll,setRemoveAll]=useState(false);
 
-const onClose=()=>{
+const [notification,setNotification]=useState(false);
+
+const notificationVisibleFunc=(del)=>{
+    setRemoveAll(del)
+    setNotification(!notification);
+}
+const resetNotification=()=>{
+    setNotification(false);
+    setRemoveAll(false);
+}
+const removeAllFunc=(data)=>{
+    console.log(data);
 
 }
+
 return(
     <section className="home_box">
         <div className="nav_box">
@@ -23,13 +35,13 @@ return(
      
         <div className="home_content">
             <div className="edit_bar_box">
-                <EditBar saveFunc={saveFunc} visible={visible}/>
+                <EditBar saveFunc={saveFunc} visible={visible} notificationVisibleFunc={notificationVisibleFunc}   resetNotification={resetNotification}/>
             </div>
             {/*<MenuBar/>*/}
-            <ListContainer/>
+            <ListContainer removeAll={removeAll} removeAllFunc={removeAllFunc}/>
         </div>
         {/*알림창*/}
-        {/*<Notification/>*/}
+        {notification&&!visible?<Notification notificationVisibleFunc={notificationVisibleFunc}/>:''}
         {/*글쓰기*/}
         {/* {visible?<NotesContainer/>:''} */}
     </section>
