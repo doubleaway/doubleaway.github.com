@@ -23,11 +23,11 @@ return(
         <div className="nav_box">
             <Nav/>
         </div>
-        <div className="edit_bar_box">
-            <EditBar saveFunc={saveFunc} visible={visible}/>
-        </div>
+     
         <div className="home_content">
-
+            <div className="edit_bar_box">
+                <EditBar saveFunc={saveFunc} visible={visible}/>
+            </div>
             {/*<MenuBar/>*/}
             <ListContainer/>
         </div>

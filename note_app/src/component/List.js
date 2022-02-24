@@ -29,17 +29,12 @@ return(
     <div className="memo_box">
         <div className="label_box">
             {/*{label}*/}
-            <IoIosPricetag/>label
-            <span onClick={()=>{onRemove(id)}}><IoMdTrash/></span>
+            <span onClick={()=>{onRemove(id)}}><IoMdTrash/></span>              <span onClick={()=>{onToggle(id)}} className={active?"color_main":""}>
+                    <IoIosStar size={20}/>
+                </span>
         </div>
         <div className="memo_content_box">
-            <div className="title_box">
-                <h1 className="content_title"><input type="checkbox" name={title}/></h1>
-                <p onClick={()=>{onToggle(id)}} className={active?"color_main":""}>
-                    <IoIosStar size={20}/>
-                </p>
-            </div>
-
+         
             <div className="content_txt">{content}</div>
             <div className="color_gray">{nowTime}</div>
         </div>

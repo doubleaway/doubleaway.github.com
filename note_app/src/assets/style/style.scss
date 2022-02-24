@@ -30,6 +30,13 @@
 
   }
 
+  body,html{
+    background-color: #419C9E;
+    // background-color: #8FE8EB;
+    // background:linear-gradient(to bottom,#419C9E,#8FE8EB);
+    
+  }
+
   //알림창
   .notification_box{
     @include size(100%,100%);
@@ -113,12 +120,21 @@
 
   //nav
   .nav_box{
-    @include size(100%,200px);
-    line-height: 200px;
-
+    @include size(60%,30px);
+    box-shadow: 5px 5px 5px #495057;
+    margin:{
+      left:20%;
+      top:30px;
+    }
+    background:#EBB390;
+    border:30px solid #EBB390;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
     h1{
-      font-size: 5rem;
+      font-size: 3.5rem;
       text-align: center;
+      margin-top: 10px;
+      color: #333;
     }
   }
 
@@ -127,10 +143,10 @@
   .edit_bar_box{
     display: flex;
     height: 100px;
-    padding-top: 40px;
+    padding-top:15px;
     box-sizing: border-box;
   justify-content: space-between;
-    margin-left: 15%;
+    margin-left: 5%;
     width:69%;
     .edit_bar{
       margin:{
@@ -143,7 +159,39 @@
       margin-left: 5px;
     }
       li{
-        margin-right: 5px;
+        
+        margin-right: 15px;
+        @include size(90px,90px);
+        background-color: #b15115c9;
+        border-radius: 100%;
+        overflow: hidden;
+        box-shadow: 2px 2px 2px #495057;
+
+        &:hover{
+          margin-top:-3px;
+          transition: all linear 0.3s;
+          background-color: rgba(235, 179, 144, 0.788);;
+        }
+        button{
+          border: none;
+          @include size(95%,95%);
+          background-color: rgba(255,255,255,0.4);
+          border-radius: 100%;
+          padding:3px;
+          box-sizing: border-box;
+          color:#333;
+
+        }
+        span{
+          display: block;
+          line-height: 1.5;
+          font-weight: bold;
+          position: relative;
+      
+        }
+        svg{
+          margin-top:5px;
+        }
       }
     }
     .search_bar{
@@ -169,12 +217,11 @@
   //homebox
 
   .home_content{
-
-    display: flex;
-    justify-content: center;
-    &> article{
-        width: 70%;
-      }
+    background-color: antiquewhite;
+    border: 30px solid #EBB390;
+    @include size(60%,75vh);
+    margin-left: 20%;
+    box-shadow: 5px 5px 5px #495057;
 
   }
 
@@ -183,13 +230,17 @@
   .list_box_square{
     display: flex;
     flex-wrap: wrap;
+    align-items: baseline;
+    // justify-content: center;
+    padding: 0 6%;
+
   }
 
 
   //메모장 스타일
   .memo_box{
     .label_box{
-      background: $main_color;
+      background: rgba(255,255,255,0.3);
       overflow: hidden;
       height: 30px;
       line-height: 1.5;
@@ -202,8 +253,7 @@
     }
     .memo_content_box{
       padding:15px 3.5%;
-      border:1px solid $color_light_gray;
-      border-radius:5px;
+ 
       padding:{
         bottom:30px;
         top: 15px;
@@ -218,14 +268,15 @@
     cursor: pointer;
     @include size(316px,auto);
     box-sizing: border-box;
-    background: rgba(255,255,255,0.6);
+    background: #AADCF5;
     overflow: hidden;
 
     margin:{
       right:17px;
       top:15px;
     }
-    border-radius: 10px;
+    border-radius: 2px;
+    box-shadow: 3px 3px 3px #495057;
     input[type='checkbox']{
       border: 1px solid $color_gray;
      box-shadow: 2px 2px 2px $main_color;
