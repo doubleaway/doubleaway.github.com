@@ -14,6 +14,8 @@ const [removeAll,setRemoveAll]=useState(false);
 
 const [notification,setNotification]=useState(false);
 
+const [concern,setConcern]=useState(false);
+
 const notificationVisibleFunc=(del)=>{
     setRemoveAll(del)
     setNotification(!notification);
@@ -22,9 +24,9 @@ const resetNotification=()=>{
     setNotification(false);
     setRemoveAll(false);
 }
-const removeAllFunc=(data)=>{
-    console.log(data);
 
+const concernFunc=()=>{
+   setConcern(!concern);
 }
 
 return(
@@ -35,10 +37,10 @@ return(
      
         <div className="home_content">
             <div className="edit_bar_box">
-                <EditBar saveFunc={saveFunc} visible={visible} notificationVisibleFunc={notificationVisibleFunc}   resetNotification={resetNotification}/>
+                <EditBar saveFunc={saveFunc} visible={visible} notificationVisibleFunc={notificationVisibleFunc}   resetNotification={resetNotification} concernFunc={concernFunc} concern={concern}/>
             </div>
             {/*<MenuBar/>*/}
-            <ListContainer removeAll={removeAll} removeAllFunc={removeAllFunc}/>
+            <ListContainer removeAll={removeAll} concern={concern}/>
         </div>
         {/*알림창*/}
         {notification&&!visible?<Notification notificationVisibleFunc={notificationVisibleFunc}/>:''}

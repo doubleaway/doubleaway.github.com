@@ -244,6 +244,14 @@ body, html {
   margin-top: 5px;
 }
 
+.edit_bar_box .edit_bar li.axent button {
+  color: #419C9E;
+}
+
+.edit_bar_box .edit_bar li.axent svg {
+  color: #419C9E;
+}
+
 .edit_bar_box .search_bar {
   height: 48px;
   border: 1px solid #E1E4E7;

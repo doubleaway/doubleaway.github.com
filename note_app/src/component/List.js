@@ -5,15 +5,15 @@ import moment from 'moment';
 import 'moment/locale/ko';
 
 
-function List({memoCon,onToggle,onRemove,removeAll,removeAllFunc}){
-
-    
+function List({memoCon,onToggle,onRemove,removeAll,removeAllFunc,concern}){
+    const data_con_tent=concern?memoCon.data_con.filter(max=>(max.active)):memoCon.data_con;
+    const allRemveTest=memoCon.data_con.filter(max=>max>0);
     return(
         
         <article className="list_box_square">
 
             {
-            memoCon.data_con.map(memoCon=>(<MemoCon memoCon={memoCon} key={memoCon.id} onToggle={onToggle} onRemove={onRemove} removeAll={removeAll} removeAllFunc={removeAllFunc} /> ))
+            data_con_tent.map(memoCon=>(<MemoCon memoCon={memoCon} key={memoCon.id} onToggle={onToggle} onRemove={onRemove} removeAll={removeAll} removeAllFunc={removeAllFunc}  /> ))
             }
 
         </article>
@@ -29,10 +29,9 @@ const [text,setText]=useState();
 
 const nowTime = moment().format('YYYY.MM.DD');
 
-if(!removeAll)
-console.log(removeAll)
-else
+if(removeAll)
 onRemove(id);
+
 // onRemove(id);
 return(
     <div className="memo_box" >
