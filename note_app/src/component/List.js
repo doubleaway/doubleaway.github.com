@@ -6,8 +6,8 @@ import 'moment/locale/ko';
 
 
 function List({memoCon,onToggle,onRemove,removeAll,removeAllFunc,concern}){
-    const data_con_tent=concern?memoCon.data_con.filter(max=>(max.active)):memoCon.data_con;
-    const allRemveTest=memoCon.data_con.filter(max=>max>0);
+    const data_con_tent=removeAll?memoCon.data_con.map(max=>onRemove(max.id)):concern?memoCon.data_con.filter(max=>(max.active)):memoCon.data_con;
+    // const allRemveTest=
     return(
         
         <article className="list_box_square">
@@ -27,10 +27,10 @@ function MemoCon({memoCon,onToggle,onRemove,removeAll,removeAllFunc}){
 const {title,content,date,active,id}=memoCon;
 const [text,setText]=useState();
 
-const nowTime = moment().format('YYYY.MM.DD');
 
-if(removeAll)
-onRemove(id);
+
+// if(removeAll)
+// onRemove(id);
 
 // onRemove(id);
 return(
@@ -44,7 +44,7 @@ return(
         <div className="memo_content_box">
          
             <div className="content_txt">{content}</div>
-            <div className="color_gray">{nowTime}</div>
+            <div className="color_gray">{date}</div>
         </div>
     </div>
 )

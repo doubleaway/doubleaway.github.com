@@ -2,8 +2,6 @@ import React, {useState} from "react";
 import Nav from "../component/Nav";
 import EditBar from "../component/EditBar";
 import Notification from "../component/Notification";
-import MemoContents from "../component/features/MemoContent";
-import NotesContainer from "../containers/memoContainer";
 import ListContainer from "../containers/ListContainer";
 const Home=()=>{
 const [visible,setVisible]=useState(false);

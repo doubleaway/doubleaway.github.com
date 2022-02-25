@@ -8,7 +8,7 @@ const NotesContainer=({saveFunc,visible})=>{
     const inputs=useSelector(state=>state.input);
     const dispatch=useDispatch();
 
-    const onAdd=useCallback(text=>dispatch(add(text)),[dispatch]);
+    const onAdd=useCallback((text,date)=>dispatch(add(text,date)),[dispatch]);
     const onToggle=useCallback(id=>dispatch(toggle(id)),[dispatch]);
     const onRemove=useCallback(id=>dispatch(remove(id)),[dispatch]);
     const inputChange=useCallback(text=>dispatch(add(text)),[dispatch]);

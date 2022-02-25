@@ -98,15 +98,16 @@ const CONCERN='notes/CONVERN';//중요표시 체크된것만 보이게
 
 
 let id=7;//add될때마다 1씩 추가
-let hiddenVal=false;
 
 
-export const add=(memo)=>({
+
+export const add=(memo,date)=>({
     type:ADD,
     memo:{
         id:id++,
         content:memo,
         importance:false,
+        date:date
     }
 });
 export const toggle=(id)=>({

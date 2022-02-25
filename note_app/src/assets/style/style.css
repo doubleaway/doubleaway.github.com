@@ -34,7 +34,7 @@ svg {
 }
 
 .color_main {
-  color: #00C854 !important;
+  color: #AADCF5 !important;
 }
 
 .color_light_gray {
@@ -46,7 +46,7 @@ svg {
 }
 
 input:focus {
-  outline: 1px solid #00C854;
+  outline: 1px solid #AADCF5;
 }
 
 .btn_edit {
@@ -336,8 +336,8 @@ body, html {
 
 .memo_box input[type='checkbox'] {
   border: 1px solid #ADB5BD;
-  -webkit-box-shadow: 2px 2px 2px #00C854;
-          box-shadow: 2px 2px 2px #00C854;
+  -webkit-box-shadow: 2px 2px 2px #AADCF5;
+          box-shadow: 2px 2px 2px #AADCF5;
 }
 
 .memo_box .contents_inputs {
@@ -396,13 +396,13 @@ body, html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-top: 225px;
-  background: white;
+  background: #AADCF5;
 }
 
 .inputs_box .memo_box textarea {
   display: inline-block;
   height: 300px;
   word-break: break-word;
-  background: rgba(255, 255, 255, 0.7);
+  background: #AADCF5;
 }
 /*# sourceMappingURL=style.css.map */

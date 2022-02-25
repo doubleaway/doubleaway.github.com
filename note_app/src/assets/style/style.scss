@@ -291,7 +291,7 @@
     cursor: pointer;
     @include size(316px,auto);
     box-sizing: border-box;
-    background: #AADCF5;
+    background: $main_color;
     overflow: hidden;
 
     margin:{
@@ -345,18 +345,20 @@
       svg{
         margin-top: 15px;
       }
+     
     }
     .memo_box{
+      background:red;
       @include size(35%,450px);
       padding:0 10px;
       box-sizing: border-box;
       margin-top:225px;
-      background: rgba(255,255,255,1);
+      background: #AADCF5;
       textarea{
         display: inline-block;
         height:300px;
         word-break: break-word;
-        background: rgba(255,255,255,0.7);
+        background: $main_color;
       }
     }
   }
