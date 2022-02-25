@@ -31,12 +31,13 @@ return(
     <section className="home_box">
         <div className="nav_box">
             <Nav/>
-        </div>
-     
-        <div className="home_content">
             <div className="edit_bar_box">
                 <EditBar saveFunc={saveFunc} visible={visible} notificationVisibleFunc={notificationVisibleFunc}   resetNotification={resetNotification} concernFunc={concernFunc} concern={concern}/>
             </div>
+        </div>
+ 
+        <div className="home_content">
+         
             {/*<MenuBar/>*/}
             <ListContainer removeAll={removeAll} concern={concern}/>
         </div>

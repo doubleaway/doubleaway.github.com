@@ -15,7 +15,7 @@ const Notification=({notificationVisibleFunc})=>{
                 <span onClick={()=>{notificationVisibleFunc(false)}}><Button contents={<AiFillCloseCircle color="white" size="60px"/>} color="light_gray" classN="notification" contentsText=""></Button></span>
                 <div className="notification_icon">
                     <AiFillAlert color="white"/>
-                    <h1>메모가 삭제됩니다.</h1>
+                    <h1>메모가 전체 삭제됩니다.</h1>
                 </div>
                 <div className="notification_content"><p>다시 복구할 수 없습니다.</p><p>정말 삭제하시겠습니까? </p></div>
                 <div className="notification_btn">

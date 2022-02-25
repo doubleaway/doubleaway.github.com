@@ -7,6 +7,9 @@
   .color_main{
     color:$main_color!important;
   }
+  .color_point{
+    color:$point_color!important;
+  }
   .color_light_gray{
     color:$color_light_gray!important;
   }
@@ -129,20 +132,21 @@
 
   //nav
   .nav_box{
-    @include size(60%,30px);
+    @include size(60%,50px);
     box-shadow: 5px 5px 5px #495057;
     margin:{
       left:20%;
-      top:30px;
+      top:50px;
     }
     background:#EBB390;
     border:30px solid #EBB390;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
+    display: flex;
+    justify-content: space-around;
     h1{
       font-size: 3.5rem;
       text-align: center;
-      margin-top: 10px;
       color: #333;
     }
   }
@@ -151,12 +155,10 @@
   //edit_bar
   .edit_bar_box{
     display: flex;
-    height: 115px;
-    padding-top:15px;
+  
     box-sizing: border-box;
-  justify-content: space-between;
-    margin-left: 5%;
-    width:69%;
+    justify-content: space-between;
+
     .edit_bar{
       margin:{
         left: 0;
@@ -242,10 +244,10 @@
   .home_content{
     background-color: antiquewhite;
     border: 30px solid #EBB390;
-    @include size(60%,80vh);
+    @include size(60%,70vh);
     margin-left: 20%;
     box-shadow: 5px 5px 5px #495057;
-
+    overflow: auto;
   }
 
 
@@ -268,11 +270,13 @@
       height: 30px;
       line-height: 1.5;
       text-indent: 15px;
-      color:white;
+      color:rgba(0,0,0,0.3);
       font-size: 1.2rem;
       svg{
         padding-right: 5px;
       }
+      justify-content: space-between;
+      display: flex;
     }
     .memo_content_box{
       padding:15px 3.5%;
@@ -289,7 +293,7 @@
       }
     }
     cursor: pointer;
-    @include size(316px,auto);
+    @include size(310px,auto);
     box-sizing: border-box;
     background: $main_color;
     overflow: hidden;
@@ -317,11 +321,41 @@
 
     .content_txt{
       width:100%;
+      div{
+        float: right;
+        margin-right: 10px;
+        padding-top:15px;
+        background-color: $color_gray;
+        border: 2px solid rgba(0,0,0,0.3);
+        &:last-child{
+          margin-right: 10px;
+        }
+
+      }
+      button{
+        &.active{
+        background-color: $point_color;
+        color:white;
+        }
+      }
+      .btn_edit{
+        float: right;
+        margin-right: 10px;
+        padding-top:15px;
+        background-color: $color_light_gray;
+        border: 2px solid rgba(0,0,0,0.3);
+        display: inline-block;
+        @include size(91.2px,61.64px);
+        border-radius: 3px;
+        text-align: center;
+      }
+    
     }
     .title_box{
       display: flex;
       justify-content: space-between;
       height: 50px;
+      background:rgba(255,255,255,0.2);
       svg{
         margin-top: 0px;
       }
@@ -348,17 +382,24 @@
      
     }
     .memo_box{
-      background:red;
+      position: relative;
       @include size(35%,450px);
-      padding:0 10px;
       box-sizing: border-box;
       margin-top:225px;
-      background: #AADCF5;
+      background:   $main_color;
       textarea{
         display: inline-block;
         height:300px;
         word-break: break-word;
         background: $main_color;
+        padding:10px;
+      }
+      .color_gray{
+        clear: both;
+        position:absolute;
+        bottom:20px;
+        left: 15px;
+
       }
     }
   }

@@ -37,7 +37,7 @@ return(
     <div className="memo_box" >
         <div className="label_box">
             {/*{label}*/}
-            <span onClick={()=>{onRemove(id)}}><IoMdTrash/></span><span onClick={()=>{onToggle(id)}} className={active?"color_main":""}>
+            <span onClick={()=>{onRemove(id)}}><IoMdTrash/></span><span onClick={()=>{onToggle(id)}} className={active?"color_point":""}>
                     <IoIosStar size={20}/>
                 </span>
         </div>

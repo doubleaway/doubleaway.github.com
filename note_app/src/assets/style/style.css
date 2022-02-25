@@ -37,12 +37,16 @@ svg {
   color: #AADCF5 !important;
 }
 
+.color_point {
+  color: #419C9E !important;
+}
+
 .color_light_gray {
   color: #E1E4E7 !important;
 }
 
 .color_gray {
-  color: #ADB5BD !important;
+  color: #4f545a !important;
 }
 
 input:focus {
@@ -151,26 +155,30 @@ body, html {
 
 .notification_box aside .notification_btn button:last-child {
   color: firebrick;
-  border-left: 1px solid #ADB5BD;
+  border-left: 1px solid #4f545a;
 }
 
 .nav_box {
   width: 60%;
-  height: 30px;
+  height: 50px;
   -webkit-box-shadow: 5px 5px 5px #495057;
           box-shadow: 5px 5px 5px #495057;
   margin-left: 20%;
-  margin-top: 30px;
+  margin-top: 50px;
   background: #EBB390;
   border: 30px solid #EBB390;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .nav_box h1 {
   font-size: 3.5rem;
   text-align: center;
-  margin-top: 10px;
   color: #333;
 }
 
@@ -178,15 +186,11 @@ body, html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 115px;
-  padding-top: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-left: 5%;
-  width: 69%;
 }
 
 .edit_bar_box .edit_bar {
@@ -276,10 +280,11 @@ body, html {
   background-color: antiquewhite;
   border: 30px solid #EBB390;
   width: 60%;
-  height: 80vh;
+  height: 70vh;
   margin-left: 20%;
   -webkit-box-shadow: 5px 5px 5px #495057;
           box-shadow: 5px 5px 5px #495057;
+  overflow: auto;
 }
 
 .list_box_square {
@@ -296,7 +301,7 @@ body, html {
 
 .memo_box {
   cursor: pointer;
-  width: 316px;
+  width: 310px;
   height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -315,8 +320,14 @@ body, html {
   height: 30px;
   line-height: 1.5;
   text-indent: 15px;
-  color: white;
+  color: rgba(0, 0, 0, 0.3);
   font-size: 1.2rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .memo_box .label_box svg {
@@ -335,7 +346,7 @@ body, html {
 }
 
 .memo_box input[type='checkbox'] {
-  border: 1px solid #ADB5BD;
+  border: 1px solid #4f545a;
   -webkit-box-shadow: 2px 2px 2px #AADCF5;
           box-shadow: 2px 2px 2px #AADCF5;
 }
@@ -351,6 +362,36 @@ body, html {
   width: 100%;
 }
 
+.memo_box .content_txt div {
+  float: right;
+  margin-right: 10px;
+  padding-top: 15px;
+  background-color: #4f545a;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.memo_box .content_txt div:last-child {
+  margin-right: 10px;
+}
+
+.memo_box .content_txt button.active {
+  background-color: #419C9E;
+  color: white;
+}
+
+.memo_box .content_txt .btn_edit {
+  float: right;
+  margin-right: 10px;
+  padding-top: 15px;
+  background-color: #E1E4E7;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  width: 91.2px;
+  height: 61.64px;
+  border-radius: 3px;
+  text-align: center;
+}
+
 .memo_box .title_box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -359,6 +400,7 @@ body, html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 50px;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .memo_box .title_box svg {
@@ -390,9 +432,9 @@ body, html {
 }
 
 .inputs_box .memo_box {
+  position: relative;
   width: 35%;
   height: 450px;
-  padding: 0 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-top: 225px;
@@ -404,5 +446,13 @@ body, html {
   height: 300px;
   word-break: break-word;
   background: #AADCF5;
+  padding: 10px;
+}
+
+.inputs_box .memo_box .color_gray {
+  clear: both;
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
 }
 /*# sourceMappingURL=style.css.map */

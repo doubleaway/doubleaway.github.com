@@ -1,11 +1,11 @@
 import React, {useState,useEffect} from "react";
-import {IoIosCreate, IoIosPricetag, IoIosStar} from "react-icons/io";
+import {IoIosCreate, IoIosPricetag, IoIosStar,IoMdCloseCircleOutline} from "react-icons/io";
 //
 import moment from 'moment';
 import 'moment/locale/ko';
 import Button from "../button";
 
-function MemoContents({memoCon,onAdd,onToggle,inputChange,input,visible,saveFunc}){
+function MemoContents({onAdd,saveFunc}){
         const [time,setTime]=useState('');
     useEffect(()=>{
     setTime(moment().format('YYYY.MM.DD'));
@@ -23,13 +23,14 @@ function MemoContents({memoCon,onAdd,onToggle,inputChange,input,visible,saveFunc
         saveFunc(false);
         e.preventDefault();
     }
-
+    const onCancel=()=>{
+        saveFunc(false);
+    }
     // console.log(nowTime);
     return (
         <div className="inputs_box">
             <div className="memo_box">
                 <div className="title_box">
-                    하아하앟
                     <h1 className="content_title"></h1>
                     <p>
                         {/* <IoIosStar size={20}/> */}
@@ -45,12 +46,16 @@ function MemoContents({memoCon,onAdd,onToggle,inputChange,input,visible,saveFunc
                                   value={memo}
                                   onChange={onChange}
                         />
-                        {/* <Button type="submit" contents={<IoIosCreate size={30}/>} color="light_gray" classN="edit" contentsText="저장"></Button> */}
-                        <button type="submit" className="btn_edit"><IoIosCreate size={30}/>저장</button>
+                      
+                         { memo==''? <div className="btn_edit"><IoIosCreate size={30}/>저장</div>:<button  className="btn_edit active"><IoIosCreate size={30}/>저장</button>}
+                         <div onClick={onCancel} className="btn_edit"><IoMdCloseCircleOutline size={30}/>취소</div>
+           
+                    
+                     
                     </form>
-
+                    <p className="color_gray">{time}</p>
                 </div>
-                <div className="color_gray">{time}</div>
+           
             </div>
         </div>
     )
