@@ -9,6 +9,9 @@ import rootReducer from "./Modules";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 import ListContainer from "./Conatiners/ListContainer";
+
+
+import { BrowserRouter } from 'react-router-dom';
 //import {composeWithDevTools} from "redux-devtools-extension";//
 
 const store=createStore(rootReducer);
