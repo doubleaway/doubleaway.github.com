@@ -11,7 +11,8 @@ import {Provider} from "react-redux";
 import ListContainer from "./Conatiners/ListContainer";
 
 
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter,Route } from 'react-router-dom';
+import Test from './Page/test';
 //import {composeWithDevTools} from "redux-devtools-extension";//
 
 const store=createStore(rootReducer);
@@ -19,7 +20,11 @@ const store=createStore(rootReducer);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ListContainer />
+     <BrowserRouter>
+         {/* <ListContainer /> */}
+         <Test/>
+      </BrowserRouter>
+
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
