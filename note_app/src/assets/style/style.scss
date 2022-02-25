@@ -40,6 +40,19 @@
     // background:linear-gradient(to bottom,#419C9E,#8FE8EB);
     
   }
+// 스크롤바
+  ::-webkit-scrollbar {
+    width: 15px;
+
+  }
+  ::-webkit-scrollbar-thumb {
+
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: $color_light_gray; 
+  }
+  // 스크롤바 끝
 
   //알림창
   .notification_box{
@@ -132,7 +145,7 @@
 
   //nav
   .nav_box{
-    @include size(60%,50px);
+    @include size(60%,70px);
     box-shadow: 5px 5px 5px #495057;
     margin:{
       left:20%;
@@ -248,6 +261,7 @@
     margin-left: 20%;
     box-shadow: 5px 5px 5px #495057;
     overflow: auto;
+  
   }
 
 

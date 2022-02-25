@@ -68,6 +68,14 @@ body, html {
   background-color: #419C9E;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E1E4E7;
+}
+
 .notification_box {
   width: 100%;
   height: 100%;
@@ -160,7 +168,7 @@ body, html {
 
 .nav_box {
   width: 60%;
-  height: 50px;
+  height: 70px;
   -webkit-box-shadow: 5px 5px 5px #495057;
           box-shadow: 5px 5px 5px #495057;
   margin-left: 20%;
