@@ -7,7 +7,10 @@ const ADD = 'MemoFunction/ADD';
 const SORT = 'MemoFunction/SORT';
 
 //action produce func
+export const write=(text)=>({
+    type:WRITE,
 
+});
 export const toggle=()=>({type:TOGGLE});
 export const remove=()=>({type:REMOVE});
 export const modify=()=>({type:MODIFY});
