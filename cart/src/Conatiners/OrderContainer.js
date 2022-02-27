@@ -1,15 +1,20 @@
-// import {useCallback} from "react";
-// import {counterChange,remove} from "../Modules/cart";
-// import {useDispatch, useSelector} from "react-redux";
-// import ShoppingBasket from "../Page/ShoppingBasket";
-// const selectCont=useSelector(state=>state.cart);
-// const dispatch=useDispatch();
-// // const onAdd=useCallback(color,size=>dispatch(add(color,size)),[dispatch]);
-// const onAdd=useCallback(color,size=>dispatch(add(color,size)),[dispatch]);
-// const OrderContainer=()=> {
-//     return(
-//     <ShoppingBasket selectCount={selectCont} onAdd={onAdd}/>
-//     )
-// }
+import {useCallback} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import List from "../Components/List";
+import {add,remove,counterChange} from "../Modules/cart";
+import ShoppingBasket from "../Page/ShoppingBasket";
 
-// export default OrderContainer;
+const OrderContainer=()=> {
+const selectCont=useSelector(state=>state.cart);
+const dispatch=useDispatch();
+const onAdd=useCallback((data)=>dispatch(add(data)),[dispatch]);
+const onDelete=useCallback((id)=>dispatch(remove(id)),[dispatch]);
+const onCounter=useCallback((id,counter)=>dispatch(counterChange(id,counter)),[dispatch]);
+console.log(selectCont);
+console.log("뭐임?왜 안찍음?")
+    return(
+    <ShoppingBasket selectCount={selectCont} onCounter={onCounter} onDelete={onDelete}/>
+    )
+}
+
+export default OrderContainer;

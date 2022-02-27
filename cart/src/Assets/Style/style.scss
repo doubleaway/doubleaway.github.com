@@ -16,6 +16,19 @@ hr{
 // 기타
 .axent{font-size: 1.5em}
 
+//공통 스타일
+.count_box{
+  margin-top: 5px;
+span{
+  outline: 1px solid $color_light_gray;
+  @include size(30px,30px);
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;cursor: pointer;
+}
+}
+
+
 // button
 .close_btn{
   @include size(20px,20px);
@@ -25,6 +38,7 @@ hr{
   text-align: center;
   line-height: 20px;
   color:$color_black;
+  cursor: pointer;
 }
 .btn{cursor: pointer;}
 //button 끝
@@ -157,16 +171,7 @@ header{
           top:15px;
           bottom:15px;
         }
-        .count_box{
-            margin-top: 5px;
-          span{
-            outline: 1px solid $color_light_gray;
-            @include size(30px,30px);
-            display: inline-block;
-            text-align: center;
-            line-height: 30px;
-          }
-        }
+
 
     }
 
@@ -179,8 +184,127 @@ header{
     }
   }
 }
+.cart_title{
+  text-align: center;
+  height: 200px;
+  line-height: 250px;
+}
+.shopping_cart{
+  h1{
+    width:100%;
+    display: block;
+  }
+  display: flex;
+  @include size(70%,auto);
+  margin-left: 15%;
+  .shopping_list_box{
 
+    @include size(65%,100%);
+    .shopping_list{
+      display: flex;
+      height: 80px;
+      line-height: 50px;
+      .close_btn{
+        // margin-top:25px;
+        vertical-align: middle;
+        padding-left: 0;
+        text-indent: 0;
+        margin-top:-10px;
+      }
+      li{
+        text-indent: 15px;
+        border-bottom: 1px solid $color_light_gray;
+        padding: 15px 0;
+        vertical-align: baseline;
+        &:nth-child(1){width: 50%;}
+        &:nth-child(2){width: 15%;}
+        &:nth-child(3){width: 15%;}
+        &:nth-child(4){width: 20%;}
+         img{
+          width: 50px;
+        }
+        &>span{
+          vertical-align: top;
+          padding-left: 15px;
+        }
+        &.count_box{
+          text-indent: 0;
+          span{
+            padding-left: 0;
+            cursor: pointer;
+          }
+        }
+      }
 
+    }
+    .list_category{
+      height: 50px;
+      border:{
+
+        bottom:1px solid $color_light_gray;
+      }
+      li{
+        padding:0 0;
+        font-weight: bold;
+      }
+    }
+  }
+  .shopping_result_box{
+    outline: 1px solid $color_light_gray;
+    margin-left:5%;
+    @include size(30%,100%);
+    box-sizing: border-box;
+    background-color: #eee;
+    &>h1{
+      height: 65px;
+      line-height: 65px;
+
+      padding:0 5%;
+      box-sizing: border-box;
+    }
+    ul{
+      padding:0 5%;
+      box-sizing: border-box;
+
+    }
+    li{
+      height: 55px;
+      line-height: 55px;
+      display: flex;
+      justify-content: space-between;
+      span{
+        
+      }
+    }
+    .total_box{
+      height: 60px;
+
+      background-color: #ccc;
+      h1{
+        background-color: #ccc;
+        line-height: 60px;
+      }
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.cart_nav{
+  @include size(100%,35px);
+  background-color: $color_black;
+  line-height: 35px;
+  color:white;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 15%;
+  box-sizing: border-box;
+  p{
+    svg{
+      cursor: pointer;
+    }
+  }
+}
 @media all and (max-width: 780px){
   header{
     span{

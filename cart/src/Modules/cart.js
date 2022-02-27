@@ -2,9 +2,16 @@
 const price=26000;
 
 //초기 data
-const data=[[{
-    
-}]]
+const data={
+    default:"이 장바구니는 비어있습니다.",
+    data_con:[{
+        id:0,
+        count:'',
+        size:'',
+        color:''
+    }]
+
+};
 
 const ADD='cart/ADD';//추가함
 const REMOVE='cart/REMOVE';//삭제
@@ -27,7 +34,14 @@ let id=0;//add될때마다 1씩 추가
 // });
 export const add=(data)=>({
     type:ADD,
+    // data:{
+    //     id:data.id,
+    //     count:data.counter,
+    //     color:data.color,
+    //     size:data.size
+    // }
     data
+
 })
 export const counterChange=(id,counter)=>({
     type:QUANTITY,
@@ -45,13 +59,15 @@ export const colorChange=(color)=>({
 });
 
 
+
 export default function cart(state=data,action){
 
     switch (action.type){
-        case ADD:
-            
-console.log(state);
-            return state.concat(action.data)
+        case ADD:           
+        return {
+            ...state,
+            data_con:state.data_con.concat(action.data)
+        }
 
         case QUANTITY:
             console.log(action)

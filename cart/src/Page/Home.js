@@ -1,12 +1,20 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import ListContainer from "../Conatiners/ListContainer";
 import OrderContainer from "../Conatiners/OrderContainer";
-import Order from "./Order";
+import Test2 from "./Cart";
+
 
 
 const Home=()=>{
 
     return(
-        <Order/>
+        <Routes>
+            <Route path='/cart' exact element={<OrderContainer/>} />
+            <Route path='/' element={<ListContainer/>} />
+       {/* <Route path='/cart' element={<OrderContainer/>} /> */}
+    
+   </Routes>
     )
 }
 
