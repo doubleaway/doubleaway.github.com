@@ -6,7 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import ImgBox from "../Components/ImgBox";
 import SelectBox from "../Components/SelectBox";
 import List from "../Components/List";
-
+import {AiFillShopping} from "react-icons/ai";
 
 const OrderBackup=({data,onAdd,onDelete,onCounter})=>{
     // 화면 출력용 데이타
@@ -68,7 +68,8 @@ return(
         <header>
             <h1>The Palete</h1>
             <span>포트폴리오용으로 작업된 사이트입니다.</span>
-            <Button color="none" contents="장바구니"/>
+            <Button color="none" contents={<AiFillShopping/>}/>
+            무아ㅓㄹ다ㅣㅓ다ㅣㅓㄷㄹ
 
         </header>
         <div className="body_box">

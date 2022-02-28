@@ -3,7 +3,7 @@ import List from "../Components/List";
 import { AiFillHome,AiOutlineShopping } from "react-icons/ai";
 
 const ShoppingBasket=({selectCount,onCounter,onDelete})=>{
-    // console.log(selectCount.data_con);
+    console.log(selectCount.data_con);
     return (
         <>
         {

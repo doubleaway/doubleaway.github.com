@@ -6,7 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import ImgBox from "../Components/ImgBox";
 import SelectBox from "../Components/SelectBox";
 import List from "../Components/List";
-
+import {AiFillShopping} from "react-icons/ai";
 
 const Order=({onAdd})=>{
     // 화면 출력용 데이터
@@ -102,66 +102,70 @@ return(
         <header>
             <h1>The Palete</h1>
             <span>포트폴리오용으로 작업된 사이트입니다.</span>
-            <Button color="none" contents="장바구니"/>
+            <div> <AiFillShopping size={25}/></div>
 
         </header>
-        <div className="body_box">
-           <div className="pic_box">
+        <article className="body_box">
+           <article className="pic_box">
                 <div className="main">
                     <img src={"img/"+colorCh+"cloth ("+img+").png"}/>
                 </div>
                
                     <ImgBox number="4"  classN="sub" imgChange={imgChange} color={colorCh} colorChange={colorChange}/>
                
-           </div>
-           <div className="ex_box">
-               <h1>
-                   상품명
-               </h1>
-               <hr/>
-               <div className="price_box">
-                   <h3>Price</h3>
-                   <h2>26,000</h2>
-               </div>
-               <hr/>
-               <div className="info_box">
-                   <h1><span><AiOutlineShoppingCart/> </span> 배송비 <span>5000원</span></h1>
-                   <p>10만원이상 구매 시 <span className="axent"> 무료 배송!</span></p>
-                   <p ><span className="axent">오늘 주문 시 이틀 뒤 도착예정</span>(지역에 따라 배송이 지연될 수 있습니다. 경기/서울 기준)</p>               </div>
-               <hr/>
-               <div className="color_change_button_box">
-                   <h3>Color</h3>
+           </article>
+            <article className="content_box">
+                <div className="ex_box">
+                    <h1>
+                        상품명
+                    </h1>
+                    <p></p>
+                    <hr/>
+                    <div className="price_box">
+                        <h3>Price</h3>
+                        <p>26,000</p>
+                    </div>
+                    <hr/>
+                    <div className="info_box">
+                        <h1><span><AiOutlineShoppingCart/> </span> 배송비 <span>5000원</span></h1>
+                        <p>10만원이상 구매 시 <span className="axent"> 무료 배송!</span></p>
+                        <p ><span className="axent">오늘 주문 시 이틀 뒤 도착예정</span>(지역에 따라 배송이 지연될 수 있습니다. 경기/서울 기준)</p>               </div>
+                    <hr/>
+                    <div className="color_change_button_box">
+                        <h3>Color</h3>
 
-                   <ul>
-                       {colors.map(color=>(<li className={"btn_color_change back_"+color} key={color} onClick={()=>{colorChange(color)}}></li>))}
-                   </ul>
-               </div>
-           </div>
-           <div className="select_box">
-                <select  value={sizeSelected} onChange={onSelect}>
-                        <option value=''>사이즈를 선택해주세요</option>
-                     {size.map(select=><option value={select} key={select}>{select}</option>)}
-               </select>
-               <select  value={colorSelected}  onChange={onColorSelect} >
-                   <option value=''>색상을 선택해주세요</option>
-                   {color.map(select=><option  value={select} key={select}>{select}</option>)}
-               </select>
-               <hr/>
-               <p>최대 구매 수량 5개</p>
-               <hr/>
-               <div>
-                   <List data={listData} count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} deleteOrder={deleteOrder}/>
-               </div>
-               <hr/>
-               <div className="result_box">
-                   <p><span>총 </span>{allCount}개</p>
-                  <p> <span className="axent">{calc}</span><span>원</span></p>
-               </div>
-               <div className="button_box">
-                   <button onClick={cartListAdd}>구입하기</button>
-               </div>
-           </div>
-        </div>
+                        <ul>
+                            {colors.map(color=>(<li className={"btn_color_change back_"+color} key={color} onClick={()=>{colorChange(color)}}></li>))}
+                        </ul>
+                    </div>
+                </div>
+                <div className="select_box">
+                        <select  value={sizeSelected} onChange={onSelect}>
+                                <option value=''>사이즈를 선택해주세요</option>
+                            {size.map(select=><option value={select} key={select}>{select}</option>)}
+                    </select>
+                    <select  value={colorSelected}  onChange={onColorSelect} >
+                        <option value=''>색상을 선택해주세요</option>
+                        {color.map(select=><option  value={select} key={select}>{select}</option>)}
+                    </select>
+                    <hr/>
+                    <p>최대 구매 수량 5개</p>
+                    <hr/>
+                    <div>
+                        <List data={listData} count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} deleteOrder={deleteOrder}/>
+                    </div>
+                    <hr/>
+                    <div className="result_box">
+                        <p><span>총 </span>{allCount}개</p>
+                        <p> <span className="axent">{calc}</span><span>원</span></p>
+                    </div>
+                    <div className="button_box">
+                        <button onClick={cartListAdd}>구입하기</button>
+                    </div>
+                </div>
+            </article>
+        </article>
+   
     </section>
 )
     
