@@ -45,11 +45,11 @@ svg {
 html, body {
   font-family: 'Nanum Pen Script', cursive;
   font-size: 18px;
-  background-color: #FDBD7F;
+  background-color: #fdbe7f28;
 }
 
 hr {
-  border: 1px solid #E1E4E7;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -78,7 +78,7 @@ img {
 
 article {
   background-color: white;
-  height: 100vh;
+  height: 87vh;
 }
 
 .close_btn {
@@ -111,7 +111,8 @@ header {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background-color: #F5EEE7;
+  background-color: #282C30;
+  color: white;
 }
 
 header span {
@@ -123,7 +124,22 @@ header h1 {
 }
 
 header div {
+  position: relative;
   cursor: pointer;
+}
+
+header div span {
+  position: absolute;
+  top: 12.5px;
+  right: -5px;
+  display: inline-block;
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  line-height: 15px;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .body_box {
@@ -187,6 +203,14 @@ header div {
   width: 40%;
   height: auto;
   background-color: white;
+  padding-right: 5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.body_box .content_box > div p {
+  margin-left: 15px;
+  font-size: 1.25rem;
 }
 
 .body_box .ex_box {
@@ -199,6 +223,14 @@ header div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  vertical-align: middle;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.body_box .ex_box h1 {
+  font-size: 2rem;
 }
 
 .body_box .ex_box .info_box {
@@ -209,6 +241,10 @@ header div {
   color: #00C854;
   font-size: 1.25rem;
   font-weight: bold;
+}
+
+.body_box .ex_box .color_change_button_box h1 {
+  line-height: 65px;
 }
 
 .body_box .ex_box .color_change_button_box .btn_color_change {
@@ -235,7 +271,7 @@ header div {
   padding: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-top: 45px;
+  margin-top: 15px;
 }
 
 .body_box .select_box select {
@@ -284,21 +320,37 @@ header div {
 .body_box .select_box .button_box button {
   width: 100%;
   height: 100%;
+  background-color: #00C854;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.body_box .select_box .button_box div {
+  width: 100%;
+  height: 100%;
+  background-color: #E1E4E7;
+  text-align: center;
+  line-height: 55px;
 }
 
 .cart_title {
   text-align: center;
-  height: 200px;
-  line-height: 250px;
+  height: 60px;
+  line-height: 60px;
 }
 
 .shopping_cart {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 70%;
-  height: auto;
-  margin-left: 15%;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 49px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0 5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 .shopping_cart h1 {
@@ -306,9 +358,17 @@ header div {
   display: block;
 }
 
-.shopping_cart .shopping_list_box {
-  width: 65%;
+.shopping_cart > div {
+  width: 40%;
   height: 100%;
+  background-color: white;
+  position: absolute;
+  right: 0;
+}
+
+.shopping_cart .shopping_list_box {
+  width: 100%;
+  height: auto;
 }
 
 .shopping_cart .shopping_list_box .shopping_list {
@@ -334,7 +394,7 @@ header div {
 }
 
 .shopping_cart .shopping_list_box .shopping_list li:nth-child(1) {
-  width: 50%;
+  width: 45%;
 }
 
 .shopping_cart .shopping_list_box .shopping_list li:nth-child(2) {
@@ -346,11 +406,13 @@ header div {
 }
 
 .shopping_cart .shopping_list_box .shopping_list li:nth-child(4) {
-  width: 20%;
+  width: 15%;
 }
 
 .shopping_cart .shopping_list_box .shopping_list li img {
   width: 50px;
+  border: 1px solid #E1E4E7;
+  border-radius: 3px;
 }
 
 .shopping_cart .shopping_list_box .shopping_list li > span {
@@ -378,10 +440,8 @@ header div {
 }
 
 .shopping_cart .shopping_result_box {
-  outline: 1px solid #E1E4E7;
-  margin-left: 5%;
-  width: 30%;
-  height: 100%;
+  width: 100%;
+  height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #eee;

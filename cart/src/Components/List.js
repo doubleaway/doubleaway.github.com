@@ -14,7 +14,7 @@ const List=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFun
     )
 }
 
-const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,deleteOrder,id,OnCounterFunc})=>{
+const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCountFunc,deleteOrder,id})=>{
     const [test,setTest]=useState(1);
     const {color,size}=data;
 
@@ -35,7 +35,7 @@ const ListItem=({data,count,onIncrease,onDecrese,allCount,allCountFunc,alldeCoun
             allCountFunc(allCount+1);
             setTest(test+1)
             onIncrease(test);
-            OnCounterFunc(id,test+1);
+    
 
         }
 

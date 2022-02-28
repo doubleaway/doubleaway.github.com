@@ -7,6 +7,7 @@ import ImgBox from "../Components/ImgBox";
 import SelectBox from "../Components/SelectBox";
 import List from "../Components/List";
 import {AiFillShopping} from "react-icons/ai";
+import OrderContainer from "../Conatiners/OrderContainer";
 
 const Order=({onAdd})=>{
     // 화면 출력용 데이터
@@ -21,10 +22,10 @@ const Order=({onAdd})=>{
 
     var [listId,setListId]=useState(1);
     // count,calc
-    const [count,setCount]=useState(0);
-    const [allCount,setAllCount]=useState(0);
+    const [count,setCount]=useState(1);
+    const [allCount,setAllCount]=useState(1);
     const [calc,setCalc]=useState(0);
-
+    const [cart,setCart]=useState(0);
     // img
     const [img,setImg]=useState("1");
     const imgChange=(img)=>{setImg(img);}
@@ -34,7 +35,7 @@ const Order=({onAdd})=>{
     const [colorCh,setColorCh]=useState("black");
     const colorChange=useCallback((color)=>{setColorCh(color);},[colorCh]);
 
-    if(allCount>5){setAllCount(5);}
+    if(allCount>10){setAllCount(10);}
     const price=26000;
     // 카운트
     const onIncrease=(count)=>{
@@ -56,7 +57,7 @@ const Order=({onAdd})=>{
     const sizeSentense='사이즈를 선택해주세요';
     const colorSentense='색상을 선택해주세요';
     const size=['M',"S","XL","XS","L"];
-    const color=["Gray","Black","Red"];
+    const color=["gray","black","red"];
     const [colorSelected,setColorSetSelected]=useState(colorSentense);
     const [sizeSelected,setSizeSetSelected]=useState(sizeSentense);
     const onSelect=(e)=>{
@@ -79,15 +80,17 @@ const Order=({onAdd})=>{
         setListId(listId=>listId+1);
         const listDataAdd={
             id:listId,
-            counter:count,
+            count:count,
             color:colorSelected,
             size: sizeSelected
         };
         setListData(listData.concat(listDataAdd));
+        setCart(cart=>cart+1);
     }
     //삭제
     const deleteOrder=(id)=>{
         setListData(listData.filter(list=>list.id!==id));
+        setCart(cart=>cart-1);
     }
 
 
@@ -102,8 +105,7 @@ return(
         <header>
             <h1>The Palete</h1>
             <span>포트폴리오용으로 작업된 사이트입니다.</span>
-            <div> <AiFillShopping size={25}/></div>
-
+            <div> <AiFillShopping size={25}/><span>{cart}</span></div>
         </header>
         <article className="body_box">
            <article className="pic_box">
@@ -117,7 +119,7 @@ return(
             <article className="content_box">
                 <div className="ex_box">
                     <h1>
-                        상품명
+                        무지 오리지널 후드티 | 블랙 | 레드 | 그레이 
                     </h1>
                     <p></p>
                     <hr/>
@@ -129,7 +131,7 @@ return(
                     <div className="info_box">
                         <h1><span><AiOutlineShoppingCart/> </span> 배송비 <span>5000원</span></h1>
                         <p>10만원이상 구매 시 <span className="axent"> 무료 배송!</span></p>
-                        <p ><span className="axent">오늘 주문 시 이틀 뒤 도착예정</span>(지역에 따라 배송이 지연될 수 있습니다. 경기/서울 기준)</p>               </div>
+                    </div>
                     <hr/>
                     <div className="color_change_button_box">
                         <h3>Color</h3>
@@ -149,7 +151,7 @@ return(
                         {color.map(select=><option  value={select} key={select}>{select}</option>)}
                     </select>
                     <hr/>
-                    <p>최대 구매 수량 5개</p>
+                    <p>최대 구매 수량 10개</p>
                     <hr/>
                     <div>
                         <List data={listData} count={count} onIncrease={onIncrease} onDecrese={onDecrese} allCount={allCount} allCountFunc={allCountFunc} alldeCountFunc={alldeCountFunc} deleteOrder={deleteOrder}/>
@@ -160,12 +162,12 @@ return(
                         <p> <span className="axent">{calc}</span><span>원</span></p>
                     </div>
                     <div className="button_box">
-                        <button onClick={cartListAdd}>구입하기</button>
+                       {cart? <button onClick={cartListAdd}>구입하기</button>:<div>구입하기</div>}
                     </div>
                 </div>
             </article>
         </article>
-   
+   <OrderContainer/>
     </section>
 )
     
