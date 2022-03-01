@@ -1,7 +1,7 @@
 @import "reset","mixin","data";
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 html,body{
-  font-family: 'Nanum Pen Script', cursive;
+  font-family: 'Dongle', sans-serif;
   font-size: 18px;
   background-color: #fdbe7f28;
 }
@@ -268,7 +268,7 @@ header{
   line-height: 60px;
 }
 .shopping_cart{
-  display: none;
+  // display: none;
   position: absolute;
   left: 0;
   top:49px;

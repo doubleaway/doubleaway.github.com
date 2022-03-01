@@ -21,11 +21,15 @@ const Order=({onAdd})=>{
 
 
     var [listId,setListId]=useState(1);
+
+
     // count,calc
     const [count,setCount]=useState(1);
     const [allCount,setAllCount]=useState(1);
     const [calc,setCalc]=useState(0);
     const [cart,setCart]=useState(0);
+
+
     // img
     const [img,setImg]=useState("1");
     const imgChange=(img)=>{setImg(img);}
@@ -37,6 +41,8 @@ const Order=({onAdd})=>{
 
     if(allCount>10){setAllCount(10);}
     const price=26000;
+
+
     // 카운트
     const onIncrease=(count)=>{
         setCount(count);
@@ -48,11 +54,12 @@ const Order=({onAdd})=>{
     const alldeCountFunc=(allCount)=>{
         setAllCount(allCount);
         setCalc((Number(price)*(allCount)));
-    
     }
     const onDecrese=(count)=>{setCount(count);}
 
     // const OnCounterFunc=(id,counter)=>{onCounter(id,counter);}
+
+
     // select box
     const sizeSentense='사이즈를 선택해주세요';
     const colorSentense='색상을 선택해주세요';
@@ -100,21 +107,26 @@ const Order=({onAdd})=>{
         onAdd(listData);
     }
 
+
+    // 장바구니 보이게
+    const [cartShow,setCartShow]=useState(false);
+    const cartShowFunc=()=>{
+        setCartShow(!cartShow);
+    }
+
 return(
     <section >
         <header>
             <h1>The Palete</h1>
             <span>포트폴리오용으로 작업된 사이트입니다.</span>
-            <div> <AiFillShopping size={25}/><span>{cart}</span></div>
+            <div onClick={cartShowFunc}> <AiFillShopping size={25}/><span>{cart}</span></div>
         </header>
         <article className="body_box">
            <article className="pic_box">
                 <div className="main">
                     <img src={"img/"+colorCh+"cloth ("+img+").png"}/>
-                </div>
-               
+                </div>           
                     <ImgBox number="4"  classN="sub" imgChange={imgChange} color={colorCh} colorChange={colorChange}/>
-               
            </article>
             <article className="content_box">
                 <div className="ex_box">
@@ -135,7 +147,6 @@ return(
                     <hr/>
                     <div className="color_change_button_box">
                         <h3>Color</h3>
-
                         <ul>
                             {colors.map(color=>(<li className={"btn_color_change back_"+color} key={color} onClick={()=>{colorChange(color)}}></li>))}
                         </ul>
@@ -167,7 +178,7 @@ return(
                 </div>
             </article>
         </article>
-   <OrderContainer/>
+   {cartShow?<OrderContainer/>:''}
     </section>
 )
     
