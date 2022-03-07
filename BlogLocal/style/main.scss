@@ -80,6 +80,7 @@ html,body{font-family: $kor_ft;position: relative; word-break: keep-all;scroll-b
   }
 }
 .main_con_box{
+  position: relative;
   @include size(70%,100vh);
   background: $main;
   .main_con {
@@ -278,6 +279,7 @@ section{
     margin-top: 50px;
   }
   .portfolio{
+    @include size(100%,100%);
     &>img{
       width: 60%;
       margin:{
@@ -287,6 +289,8 @@ section{
     }
     .project_con{
       // display: flex;
+
+      @include size(80%,90%);
       margin-top: 0px;
       &>div{
         @include size(35%,540px);
@@ -305,8 +309,8 @@ section{
           }
         }
         &:first-child{
-          width: 70%;
-          margin-left: 15%;
+          width: 100%;
+          margin-left: 0%;
         }
        ul{
           li{
@@ -322,8 +326,9 @@ section{
           position: absolute;
         }
         .img_box{
-          @include size(85%,365px);
-
+          @include size(85%,100%);
+          position: absolute;
+          top:0;
           margin:{
             left:7.5%;
             top:8.5px;
@@ -594,7 +599,7 @@ footer{
             }
           }
           &:first-child{
-            width: 100%;
+            @include size(100%,100%);
             margin-left: 0%;
           }
           ul{
