@@ -1,4 +1,4 @@
-//스킬
+
 const skillsObj={"html":10,"scss":10,"javascript":7,"jquery":8,"react":6,"vue":5,"photoshop/illustlator":10}
 
 var li=0;
@@ -29,8 +29,4 @@ for(var n in skillsObj){
     console.log('object => ', n, 'value => ', skillsObj[n]);
     skill(n,skillsObj[n])
 }
-// 스킬 끝
 
-//project
-
-//project 끝

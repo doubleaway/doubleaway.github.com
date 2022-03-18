@@ -1,21 +1,23 @@
-@import "reset","mixin","data","function";
+@import "reset.scss","mixin.scss","data.scss","function.scss";
 $main:$colorWhite;
 $sub:rgba(0,0,0,0);
-//임시
+//임시ㅇ
 #img-box1{
-  @include background-img("../img/port1.png");
+  @include background-img("../img/port1.PNG");
 }
 #img-box2{
-  @include background-img("../img/port2.png");
+  @include background-img("../img/port2.PNG");
 }
 
 #img-box3{
-  @include background-img("../img/port3.png");
+  @include background-img("../img/port3.PNG");
 }
 #img-box4{
-  @include background-img("../img/port4.png");
+  @include background-img("../img/port4.PNG");
 }
-
+#img-box5{
+  @include background-img("../img/port5.PNG");
+}
 //html,body
 html,body{font-family: $kor_ft;position: relative; word-break: keep-all;scroll-behavior: smooth}
 .backImg{
@@ -80,7 +82,6 @@ html,body{font-family: $kor_ft;position: relative; word-break: keep-all;scroll-b
   }
 }
 .main_con_box{
-  position: relative;
   @include size(70%,100vh);
   background: $main;
   .main_con {
@@ -96,7 +97,7 @@ html,body{font-family: $kor_ft;position: relative; word-break: keep-all;scroll-b
 
     & > div {
       margin-top: 30px;
-      padding-bottom: 20px;
+      padding-bottom: 70px;
     }
 
     p {
@@ -279,7 +280,6 @@ section{
     margin-top: 50px;
   }
   .portfolio{
-    @include size(100%,100%);
     &>img{
       width: 60%;
       margin:{
@@ -288,9 +288,7 @@ section{
       }
     }
     .project_con{
-      // display: flex;
-
-      @include size(80%,90%);
+      display: flex;
       margin-top: 0px;
       &>div{
         @include size(35%,540px);
@@ -309,8 +307,8 @@ section{
           }
         }
         &:first-child{
-          width: 100%;
-          margin-left: 0%;
+          width: 55%;
+          margin-left: 2.5%;
         }
        ul{
           li{
@@ -326,9 +324,8 @@ section{
           position: absolute;
         }
         .img_box{
-          @include size(85%,100%);
-          position: absolute;
-          top:0;
+          @include size(85%,365px);
+
           margin:{
             left:7.5%;
             top:8.5px;
@@ -450,7 +447,7 @@ footer{
       }
 
       & > div {
-        margin-top: 20px;
+        margin-top: 30px;
         margin-bottom: 0;
       }
 
@@ -599,7 +596,7 @@ footer{
             }
           }
           &:first-child{
-            @include size(100%,100%);
+            width: 100%;
             margin-left: 0%;
           }
           ul{
