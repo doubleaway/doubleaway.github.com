@@ -840,10 +840,11 @@ section{
     padding-top: 60px;
     &>div{
       display: block;
-      font-size:5rem;
+      font-size:6rem;
     }
     .title{
-      margin-left: 6.5%;
+      margin-left: 2.5%;
+      margin-top:5px;
       p{
         line-height: 80px;
       }
@@ -854,9 +855,8 @@ section{
      display: none;
     }
     h1{
-      font-size:2.5rem;
+      font-size:3.25rem;
       letter-spacing: 10px;
-      text-align: center;
       line-height: 70px;
     }
     .scllor_active{
@@ -872,18 +872,19 @@ section{
 // about
 .about{
   article{
-    @include size(100%,auto);
+    width:100%;
+    margin-left: 0%;
     border-radius: 15px;
     &>div{
 
       &>div{
         padding:4.5%;
         box-sizing: border-box;
-        @include size(100%,auto);
+        @include size(95%,auto);
         border-radius: 15px;
         display: block;
         margin:{
-          left:0px;
+          left:2.5%;
           top:70px;
         }
         &>div{
@@ -914,9 +915,7 @@ section{
       }
     }
 
-    margin:{
-      left: 0%;
-    }
+  
 
     .main_txt{
       display: block;
@@ -937,52 +936,18 @@ section{
     
     }
     .project{
-        margin-left: 0px;
+      margin-left: 2.5%;
         .hexagon {
           transform: scale(0.7);
-          width: 150px;
-          height: 86.60px;
-          background-color: #ffffff;
-          margin: 43.30px 0;
-          border-left: solid 1px #b6b6b6; /* 외곽라인 두께및 색상 */
-          border-right: solid 1px #b6b6b6; /* 외곽라인 두께및 색상 */
-          float:left;
-          right: -8.5%;
-          top:-85px;
-          background-color: $point_color;
+          right: -30px;
+          top:-90px;
           p{
             top:8px;
             left:40px;
             font-size:2rem;
           }
       }
-      
-      .hexagon:before,
-      .hexagon:after {
-          content: "";
-          position: absolute;
-          z-index: 1;
-          width: 106.07px;
-          height: 106.07px;
-          -webkit-transform: scaleY(0.5774) rotate(-45deg);
-          -ms-transform: scaleY(0.5774) rotate(-45deg);
-          transform: scaleY(0.5774) rotate(-45deg);
-          background-color: inherit;
-          left: 20.9670px;
-      }
-      
-      .hexagon:before {
-          top: -53.0330px;
-          border-top: solid 1.4142px #b6b6b6; 
-          border-right: solid 1.4142px #b6b6b6; 
-      }
-      
-      .hexagon:after {
-          bottom: -53.0330px;
-          border-bottom: solid 1.4142px #b6b6b6; 
-          border-left: solid 1.4142px #b6b6b6; 
-      }
-      
+
     }
   }
 }
@@ -1103,14 +1068,18 @@ section{
 
   .detail_page{
     @include size(100%,100%);
-    z-index: 50;
+    flex-direction: column-reverse;
+    position:fixed;
+    overflow: auto;
+    z-index: 1000;
     &>div{
+      background-color: #269097;
       &:nth-child(1){
-        @include size(25%,100%);
+        @include size(100%,auto);
         .detail_title{
           margin:{
-            top:90px;
-            left: 50px;
+            top:180px;
+            left: 2.5%;
           }
           h1{
             font-size: 3rem;
@@ -1127,8 +1096,8 @@ section{
         }
         .detail_of_function{
           margin:{
-            top: 300px;
-            left: 50px;
+            top: 35px;
+            left: 2.5%;
           }
           .detail_of_function_item{
             li{
@@ -1145,7 +1114,7 @@ section{
             }
           }
           .detail_of_function_img{
-            margin-top: 35px;
+            margin-top: 30px;
             display: flex;
           li{
             margin-right: 15px;
@@ -1163,34 +1132,34 @@ section{
         }
       }
       &:nth-child(2){
-        @include size(65%,100%);
+        @include size(95%,200px);
         margin-left: 2.5%;
       }
     }
     .monitor_box{
-      @include size(100%,300px);
+      @include size(95%,200px);
+      margin-left:2.5%;
       margin-top:70px;
-      background-color: $colorBlack;
       position:relative;
+      border:none;
+      outline: 15px solid #333;
+      background-position: center;
+      background-size: cover;
       &>div{
         position: absolute;
         bottom: 30px;
-        right: 5%;
+        left: 5%;
     
         div{
           display: inline-block;
-          @include size(120px,120px);
+          @include size(100px,70px);
           vertical-align: bottom;
-          background-color: $point_color;
-          line-height: 120px;
-          text-align: center;
-          cursor: pointer;
-          // border:1px solid rgba(0,0,0,0.3);
+          line-height: 70px;
           box-shadow: 2px 2px 2px $sub_color;
           &.site_button{
             padding-top:30px;
             box-sizing: border-box;
-            line-height: 30px;
+            line-height: 10px;
             
           }
         }
@@ -1203,13 +1172,13 @@ section{
 // contact
 .contact{
   padding-top: 5px;
-
+  padding-bottom:0;
   .title_box{
     top:85px;
   }
   article{
     margin-top:15%;
-    @include size(100%,91vh);
+    @include size(100%,100vh);
     position: relative;
     .contact_box{
       left: 50%;
@@ -1313,5 +1282,7 @@ section{
   }
 }
 // contact end
-
+nav{
+  display: none;
+}
 }

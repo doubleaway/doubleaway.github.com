@@ -30,7 +30,7 @@ const aboutContentDisplay=(about)=>{
     <div>
         <div class="career" data-aos=\"fade-up\" data-aos-easing=\"ease-out-cubic\" data-aos-duration=\"1600\">
             <div >
-                <p>ACTIVITY</p>
+                <p>CAREER</p>
                 <div class="circle_title">
                     <p>경력 &</p>
                     <p>자격증</p>
@@ -43,7 +43,7 @@ const aboutContentDisplay=(about)=>{
         </div>
         <div class="project" data-aos=\"fade-up\" data-aos-easing=\"ease-out-cubic\" data-aos-duration=\"1600\">
             <div >
-                <p>ACTIVITY</p>
+                <p>PROJECT</p>
                 <div class=" hexagon">
                     <p>경력 &<br/>
                     자격증</p>
